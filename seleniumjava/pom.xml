@@ -19,7 +19,12 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
         </dependency>
     </dependencies>
 
@@ -30,7 +35,17 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test.resources/splittedtest.xml</suite.xml>
+                <suite.xml>src/test/resources/splittedtest.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>test</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/test.xml</suite.xml>
             </properties>
         </profile>
     </profiles>
@@ -43,7 +58,7 @@
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
                     <source>${java.version}</source>
-                    <target>${java_version}</target>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
 
@@ -59,4 +74,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
