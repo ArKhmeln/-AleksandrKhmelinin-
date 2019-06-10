@@ -3,7 +3,7 @@
 
     <test name="suite">
         <classes>
-            <class name="lesson1.Example01"></class>
+            <class name="lesson1.Example01"/>
         </classes>
     </test>
 

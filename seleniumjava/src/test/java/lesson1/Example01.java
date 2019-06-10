@@ -26,6 +26,12 @@ public class Example01 {
     }
 
     @Test
+    public void sumTest() {
+        System.out.println("test1");
+        Assert.assertEquals(2 + 2, 4);
+    }
+
+    @Test
     public void substractTest() {
         System.out.println("test2");
         Assert.assertEquals(2 - 2, 0);
