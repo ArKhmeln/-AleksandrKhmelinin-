@@ -49,7 +49,7 @@
         <profile>
             <id>hw1-add-and-subtract-tests</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/hw1AddAndSubtractTests.xml</suite.xml>

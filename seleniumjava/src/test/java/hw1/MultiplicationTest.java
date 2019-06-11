@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class MultiplicationTest extends BeforeMethods {
+public class MultiplicationTest extends Base {
 
     @DataProvider
     public static Object[][] calcData() {

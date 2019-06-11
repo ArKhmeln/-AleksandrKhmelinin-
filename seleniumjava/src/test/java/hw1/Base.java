@@ -3,9 +3,9 @@ package hw1;
 import com.epam.tat.module4.Calculator;
 import org.testng.annotations.*;
 
-public class BeforeMethods {
+public class Base {
 
-    public Calculator calculator;
+    Calculator calculator;
 
     @BeforeMethod
     public void before() {

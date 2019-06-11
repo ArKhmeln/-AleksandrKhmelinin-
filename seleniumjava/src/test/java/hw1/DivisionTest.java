@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class DivisionTest extends BeforeMethods {
+public class DivisionTest extends Base {
 
     @DataProvider
     public static Object[][] calcData() {
