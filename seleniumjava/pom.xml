@@ -12,26 +12,57 @@
         <java.version>1.8</java.version>
         <testng.version>6.14.3</testng.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <hw1.path>D:\JavaTest\Lessons\hw\HW1_Unit_Frameworks\calculator-1.0.jar</hw1.path>
     </properties>
 
     <profiles>
         <profile>
-            <id>splitted-test</id>
+            <id>lesson1-splittedtest</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/splittedtest.xml</suite.xml>
+                <suite.xml>src/test/resources/lesson1splittedtest.xml</suite.xml>
             </properties>
         </profile>
 
         <profile>
-            <id>test</id>
+            <id>lesson1-test</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/test.xml</suite.xml>
+                <suite.xml>src/test/resources/lesson1test.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw1-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw1tests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw1-add-and-subtract-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw1AddAndSubtractTests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw1-mult-and-div-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw1MultAndDivTests.xml</suite.xml>
             </properties>
         </profile>
     </profiles>
@@ -39,9 +70,15 @@
     <dependencies>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-integration</artifactId>
-            <version>1.3</version>
+            <artifactId>hamcrest</artifactId>
+            <version>2.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
         </dependency>
 
         <dependency>
@@ -54,6 +91,14 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>hw1</groupId>
+            <artifactId>calculator</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${hw1.path}</systemPath>
         </dependency>
     </dependencies>
 
