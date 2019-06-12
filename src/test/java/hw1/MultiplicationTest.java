@@ -8,15 +8,14 @@ public class MultiplicationTest extends Base {
 
     @DataProvider
     public static Object[][] calcData() {
-//        TODO Why you decide use this numbers?
-        return new Object[][] {{2, 2, 4}, {3, 7, 21}, {6, 7, 42}};
+//        TODO Why you decide use this numbers?     fixed
+        return new Object[][] {{8, -8, -64}, {3, 7, 21}, {-6, -7, 42}};
     }
 
     @Test(dataProvider = "calcData")
-    public void multiplicationTest(long multiplicand, long factor, long composition) {
+    public void multiplicationTest(long multiplicand, long factor, long expected) {
         long actual = calculator.mult(multiplicand, factor);
-        //        TODO Is this operation necessary?
-        long expected = composition;
+        //        TODO Is this operation necessary?     fixed
         assertEquals(actual, expected);
     }
 }
