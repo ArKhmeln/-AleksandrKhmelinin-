@@ -8,13 +8,10 @@
     <artifactId>selenium-java</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-<!--    TODO project does not compile-->    <!-- fixed-->
-
     <properties>
         <java.version>1.8</java.version>
         <testng.version>6.14.3</testng.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-        <!-- TODO Whiy path to the library is absolute -->  <!--fixed-->
         <hw1.path>${basedir}/src/test/resources/files/calculator-1.0.jar</hw1.path>
     </properties>
 
