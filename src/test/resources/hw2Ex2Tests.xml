@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EPAM web site testing ex.2">
+
+    <test name="Exersice2 suite">
+        <classes>
+            <class name="hw2.ex2.Exercise2"/>
+        </classes>
+    </test>
+
+</suite>

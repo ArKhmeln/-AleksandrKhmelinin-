@@ -1,6 +1,7 @@
 package hw2.ex1;
 
 import base.BaseTest;
+import base.BaseTest2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -12,10 +13,10 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class Exercise1 extends BaseTest {
+public class Exercise1 extends BaseTest2 {
 
     @Test
-    public void ex1EpamSiteTests() {
+    public void loginTest() {
         //Step 1 go to the site is in the BaseTest class
         //Step 2 assert browser title
         assertEquals(driver.getTitle(), "Home Page");
@@ -31,7 +32,10 @@ public class Exercise1 extends BaseTest {
 
         //Step 5 assert browser title
         assertEquals(driver.getTitle(), "Home Page");
+    }
 
+    @Test
+    public void pageElementsTests() {
         //Step 6 assert header section
         List<WebElement> headerItems = driver.findElements(By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]"));
         List<String> itemsNames = new ArrayList<>();

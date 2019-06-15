@@ -2,6 +2,7 @@
 package hw2.ex2;
 
 import base.BaseTest;
+import base.BaseTest2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -13,10 +14,10 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class Exercise2 extends BaseTest {
+public class Exercise2 extends BaseTest2 {
 
     @Test
-    public void ex2EpamSiteTests() {
+    public void loginTest() {
         //Step 1 "go to the site" is in the BaseTest class
         //Step 2 assert browser title
         assertEquals(driver.getTitle(), "Home Page");
@@ -29,7 +30,10 @@ public class Exercise2 extends BaseTest {
 
         //Step 4 assert user name
         assertEquals(driver.findElement(By.id("user-name")).getText(), "PITER CHAILOVSKII");
+    }
 
+    @Test
+    public void pageElementsTests() {
         //Step 5 click & assert header dropdown
         driver.findElement(By.cssSelector("li.dropdown")).click();
         List<String> actualHeaderDropdown = new ArrayList<>();
