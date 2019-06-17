@@ -17,32 +17,12 @@
 
     <profiles>
         <profile>
-            <id>lesson1-splittedtest</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.xml>src/test/resources/lesson1splittedtest.xml</suite.xml>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>lesson1-test</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <properties>
-                <suite.xml>src/test/resources/lesson1test.xml</suite.xml>
-            </properties>
-        </profile>
-
-        <profile>
             <id>hw1-tests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw1tests.xml</suite.xml>
+                <suite.xml>src/test/resources/forhw1/hw1tests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -52,7 +32,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw1AddAndSubtractTests.xml</suite.xml>
+                <suite.xml>src/test/resources/forhw1/hw1AddAndSubtractTests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -62,7 +42,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw1MultAndDivTests.xml</suite.xml>
+                <suite.xml>src/test/resources/forhw1/hw1MultAndDivTests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -72,7 +52,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw2tests.xml</suite.xml>
+                <suite.xml>src/test/resources/forhw2/hw2tests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -82,7 +62,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw2Ex1Tests.xml</suite.xml>
+                <suite.xml>src/test/resources/forhw2/hw2Ex1Tests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -92,7 +72,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.xml>src/test/resources/hw2Ex2Tests.xml</suite.xml>
+                <suite.xml>src/test/resources/forhw2/hw2Ex2Tests.xml</suite.xml>
             </properties>
         </profile>
     </profiles>
