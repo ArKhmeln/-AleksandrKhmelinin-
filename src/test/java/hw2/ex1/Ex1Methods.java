@@ -1,6 +1,6 @@
 package hw2.ex1;
 
-import hw2.hw2Base.Ex2BaseTest;
+import hw2.hw2Base.Hw2BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -11,7 +11,7 @@ import java.util.List;
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Ex1Methods extends Ex2BaseTest {
+public class Ex1Methods extends Hw2BaseTest {
     //6. Assert header section
     public void assertHeadersection(List headerExpected) {
         List<WebElement> headerItems = driver.findElements(By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]"));

@@ -7,7 +7,7 @@ import org.testng.annotations.*;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class Ex2BaseTest {
+public class Hw2BaseTest {
 
     protected WebDriver driver;
 

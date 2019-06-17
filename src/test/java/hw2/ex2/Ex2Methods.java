@@ -1,6 +1,6 @@
 package hw2.ex2;
 
-import hw2.hw2Base.Ex2BaseTest;
+import hw2.hw2Base.Hw2BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class Ex2Methods extends Ex2BaseTest {
+public class Ex2Methods extends Hw2BaseTest {
 
     //5. Click & assert header dropdown
     protected void headerDropdown(List expectedHeaderDropdown) {
