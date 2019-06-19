@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+// TODO Unused import
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -54,6 +55,7 @@ public class Hw2BaseTest {
     //Assert user name
     protected void username(String expectedUsername) {
         WebElement actualUsername = driver.findElement(By.id("user-name"));
+        // TODO It is better check visibility and after that text :)
         assertEquals(actualUsername.getText(), expectedUsername);
         assertTrue(actualUsername.isDisplayed());
     }
