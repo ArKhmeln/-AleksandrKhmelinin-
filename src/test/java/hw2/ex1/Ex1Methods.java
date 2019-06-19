@@ -18,8 +18,10 @@ public class Ex1Methods extends Hw2BaseTest {
         List<String> itemsNames = new ArrayList<>();
         for(WebElement element : headerItems) {
             itemsNames.add(element.getText());
+            assertTrue(element.isDisplayed());
         }
         WebElement services = driver.findElement(By.cssSelector("ul[class$='navbar-nav m-l8'] a.dropdown-toggle"));
+        assertTrue(services.isDisplayed());
         itemsNames.add(2, services.getText());
         assertEquals(itemsNames, headerExpected);
     }
@@ -39,6 +41,7 @@ public class Ex1Methods extends Hw2BaseTest {
         List<String> actualIconText = new ArrayList<>();
         for(WebElement element : iconTexts) {
             actualIconText.add(element.getText());
+            assertTrue(element.isDisplayed());
         }
         List<String> expectedIconText = Arrays.asList("To include good practices\n" +
                 "and ideas from successful\n" +

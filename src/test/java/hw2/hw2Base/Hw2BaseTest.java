@@ -2,10 +2,13 @@ package hw2.hw2Base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class Hw2BaseTest {
 
@@ -49,8 +52,10 @@ public class Hw2BaseTest {
     }
 
     //Assert user name
-    protected void username(String username) {
-        assertEquals(driver.findElement(By.id("user-name")).getText(), username);
+    protected void username(String expectedUsername) {
+        WebElement actualUsername = driver.findElement(By.id("user-name"));
+        assertEquals(actualUsername.getText(), expectedUsername);
+        assertTrue(actualUsername.isDisplayed());
     }
 }
 

@@ -19,6 +19,7 @@ public class Ex2Methods extends Hw2BaseTest {
         List<WebElement> headerDropdown = driver.findElements(By.cssSelector("ul.dropdown-menu>li"));
         for(WebElement element: headerDropdown) {
             actualHeaderDropdown.add(element.getText());
+            assertTrue(element.isDisplayed());
         }
         assertEquals(actualHeaderDropdown, expectedHeaderDropdown);
     }
@@ -30,6 +31,7 @@ public class Ex2Methods extends Hw2BaseTest {
         List<WebElement> leftDropdown = driver.findElements(By.cssSelector(".menu-title[index='3']>.sub span"));
         for(WebElement element: leftDropdown) {
             actualLeftDropdown.add(element.getText());
+            assertTrue(element.isDisplayed());
         }
         assertEquals(actualLeftDropdown, expectedLeftDropdown);
     }
