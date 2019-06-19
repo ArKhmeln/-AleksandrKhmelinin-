@@ -12,7 +12,10 @@ import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Ex1Methods extends Hw2BaseTest {
+
+    // TODO Please follow java code convention for the method naming
     //6. Assert header section
+    // TODO What type of elements could contain list?
     protected void assertHeadersection(List headerExpected) {
         List<WebElement> headerItems = driver.findElements(By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]"));
         List<String> itemsNames = new ArrayList<>();
@@ -20,9 +23,11 @@ public class Ex1Methods extends Hw2BaseTest {
             itemsNames.add(element.getText());
             assertTrue(element.isDisplayed());
         }
+        // TODO looks like crutch
         WebElement services = driver.findElement(By.cssSelector("ul[class$='navbar-nav m-l8'] a.dropdown-toggle"));
         assertTrue(services.isDisplayed());
         itemsNames.add(2, services.getText());
+        // TODO For collections could be used another assert
         assertEquals(itemsNames, headerExpected);
     }
 
@@ -43,6 +48,7 @@ public class Ex1Methods extends Hw2BaseTest {
             actualIconText.add(element.getText());
             assertTrue(element.isDisplayed());
         }
+        // TODO COuld this text moved to the parameters of the method? Why?
         List<String> expectedIconText = Arrays.asList("To include good practices\n" +
                 "and ideas from successful\n" +
                 "EPAM project", "To be flexible and\n" +
@@ -50,6 +56,7 @@ public class Ex1Methods extends Hw2BaseTest {
                 "(about 20 internal and\n" +
                 "some external projects),\n" +
                 "wish to get more…");
+        // TODO For collections could be used another assert
         assertEquals(actualIconText, expectedIconText);
     }
 
@@ -60,11 +67,13 @@ public class Ex1Methods extends Hw2BaseTest {
         for(WebElement element : mainHeaderText) {
             actualMainHeaderText.add(element.getText());
         }
+        // TODO COuld this text moved to the parameters of the method? Why?
         List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
                 " CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT" +
                 " ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO" +
                 " CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT" +
                 " NULLA PARIATUR.");
+        // TODO For collections could be used another assert
         assertEquals(actualMainHeaderText, expectedMainHeaderText);
     }
 
@@ -86,12 +95,14 @@ public class Ex1Methods extends Hw2BaseTest {
         driver.switchTo().defaultContent();
     }
 
+    // TODO Please follow java code convention for the method naming
     //13. Assert sub header text
     protected void subheaderText(String expectedSubHeader) {
         WebElement subHeader = driver.findElement(By.cssSelector(".text-center>a"));
         assertEquals(subHeader.getText(), expectedSubHeader);
     }
 
+    // TODO Please follow java code convention for the method naming
     //14 Assert sub header link
     protected void subheaderLink(String expectedSubHeaderLink) {
         assertTrue(driver.findElement(By.linkText("JDI GITHUB")).isDisplayed());
