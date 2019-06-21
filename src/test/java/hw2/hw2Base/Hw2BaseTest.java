@@ -85,7 +85,7 @@ public class Hw2BaseTest {
         assertEquals(actualUsername.getText(), expectedUsername);
     }
 
-    //15. Assert left section
+    //Assert section presence
     protected void assertSectionPresence(By locator) {
         Assert.assertTrue(driver.findElement(locator).isDisplayed());
     }
@@ -111,7 +111,7 @@ public class Hw2BaseTest {
         }
     }
 
-    //12,14,16,18 Checkboxes logo rows
+    //12,14,16,18 Logo rows
     protected boolean checkLogoText(String searchingText) {
         List<WebElement> logoElements = driver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
         for (WebElement element : logoElements) {
