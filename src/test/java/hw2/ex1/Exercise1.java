@@ -1,5 +1,6 @@
 package hw2.ex1;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -11,7 +12,7 @@ public class Exercise1 extends Ex1Methods {
         assertBrowserTitle("Home Page");
         // TODO I do not understand this step(      -fixed
         assertUsername("PITER CHAILOVSKII");
-        assertHeaderSection(Arrays.asList("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"));
+        assertHeaderSectionText(Arrays.asList("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"));
         assertPageImagesPresence();
         // FIXME test failed here if run through the maven      -skype
         assertIconText(expectedIconText);
@@ -27,8 +28,8 @@ public class Exercise1 extends Ex1Methods {
         // TODO I do not understand this step(      -fixed
         assertSubHeaderLink("https://github.com/epam/JDI");
         // TODO I do not understand this step(      -fixed
-        assertLeftSectionPresence("mCSB_1");
+        assertSectionPresence(By.id("mCSB_1"));     //Left section
         // TODO I do not understand this step(      -fixed
-        assertFooterPresence();
+        assertSectionPresence(By.cssSelector(".footer-bg"));    //Footer
     }
 }

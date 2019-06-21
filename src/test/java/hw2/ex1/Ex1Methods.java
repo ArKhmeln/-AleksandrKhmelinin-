@@ -15,7 +15,7 @@ public class Ex1Methods extends Hw2BaseTest {
     // TODO Please follow java code convention for the method naming    -fixed
     //6. Assert header section
     // TODO What type of elements could contain list?   -fixed
-    protected void assertHeaderSection(List<String> expectedElements) {
+    protected void assertHeaderSectionText(List<String> expectedElements) {
         checkText(null, By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]," +
                         " ul[class$='navbar-nav m-l8'] a.dropdown-toggle"));
         // TODO looks like crutch   -fixed
@@ -92,9 +92,5 @@ public class Ex1Methods extends Hw2BaseTest {
         assertEquals(actualSubHeaderLink, expectedSubHeaderLink);
     }
 
-    //16. Assert footer
-    protected void assertFooterPresence() {
-        assertTrue(driver.findElement(By.cssSelector(".footer-bg")).isDisplayed());
-    }
 }
 

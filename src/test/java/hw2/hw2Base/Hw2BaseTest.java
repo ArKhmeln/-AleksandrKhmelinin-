@@ -86,8 +86,8 @@ public class Hw2BaseTest {
     }
 
     //15. Assert left section
-    protected void assertLeftSectionPresence(String id) {
-        Assert.assertTrue(driver.findElement(By.id(id)).isDisplayed());
+    protected void assertSectionPresence(By locator) {
+        Assert.assertTrue(driver.findElement(locator).isDisplayed());
     }
 
     //Click(optional) and assert text

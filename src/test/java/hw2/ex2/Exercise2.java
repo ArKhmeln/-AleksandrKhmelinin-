@@ -1,5 +1,6 @@
 package hw2.ex2;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -25,9 +26,9 @@ public class Exercise2 extends Ex2Methods {
         // TODO I do not understand this step(      -fixed
         assertPageElementsPresence();
         // TODO I do not understand this step(      -fixed
-        assertRightSectionPresence();
+        assertSectionPresence(By.cssSelector("[class~='right-fix-panel']"));   //right section
         // TODO I do not understand this step(      -fixed
-        assertLeftSectionPresence("mCSB_1_container");
+        assertSectionPresence(By.id("mCSB_1_container"));   //left section
         selectCheckbox("Water");
         selectCheckbox("Wind");
         // TODO I do not understand this step(      -fixed

@@ -6,13 +6,12 @@ import org.openqa.selenium.By;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class Ex2Methods extends Hw2BaseTest {
 
     //5. Click & assert header dropdown
     // TODO What type of elements could contain list?   -fixed
-    // TODO This method looks like Ex1Methods.assertHeaderSection   -fixed
+    // TODO This method looks like Ex1Methods.assertHeaderSectionText   -fixed
     protected void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
         checkText(By.cssSelector("li.dropdown"), By.xpath("//ul[@class='dropdown-menu']//li"));
         // TODO For collections could be used another assert    -skype
@@ -39,7 +38,6 @@ public class Ex2Methods extends Hw2BaseTest {
         driver.findElement(By.xpath("//a[contains(text(), 'Different elements')]")).click();
     }
 
-
     //8. Assert page elements
     protected void assertPageElementsPresence() {
         int actualCheckboxesAmount = driver.findElements(By.className("label-checkbox")).size();
@@ -52,14 +50,8 @@ public class Ex2Methods extends Hw2BaseTest {
         assertEquals(actualButtonsAmount, 2);
     }
 
-    //9. Assert right section
-    protected void assertRightSectionPresence() {
-        assertTrue(driver.findElement(By.cssSelector("[class~='right-fix-panel']")).isDisplayed());
-    }
-
-
     //Step 10 assert left section
-    // TODO This method looks like Ex1Methods.assertLeftSectionPresence     -fixed
+    // TODO This method looks like Ex1Methods.assertSectionPresence     -fixed
 
     //11. Select checkboxes
     protected void selectCheckbox(String checkboxName) {
@@ -68,7 +60,6 @@ public class Ex2Methods extends Hw2BaseTest {
     // TODO This method should be parametrized      -fixed
         // TODO This locators could be improved     -fixed
     //Method is in the BaseTest
-
 
     //12. Assert checkboxes logo rows
     //Method in the Base Test
