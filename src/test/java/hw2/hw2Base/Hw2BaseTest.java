@@ -102,7 +102,7 @@ public class Hw2BaseTest {
     }
 
     //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
-    protected void selectAndClickElement(By elements, String name) {
+    protected void selectAndClickElementByName(By elements, String name) {
         List<WebElement> buttons = driver.findElements(elements);
         for(WebElement element: buttons) {
             if (element.getText().equals(name)) {

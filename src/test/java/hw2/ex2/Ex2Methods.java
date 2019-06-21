@@ -55,7 +55,7 @@ public class Ex2Methods extends Hw2BaseTest {
 
     //11. Select checkboxes
     protected void selectCheckbox(String checkboxName) {
-        selectAndClickElement(By.className("label-checkbox"), checkboxName);
+        selectAndClickElementByName(By.className("label-checkbox"), checkboxName);
     }
     // TODO This method should be parametrized      -fixed
         // TODO This locators could be improved     -fixed
@@ -71,7 +71,7 @@ public class Ex2Methods extends Hw2BaseTest {
     // TODO This method should be parametrized      -fixed
         // TODO This locator could be improved      -fixed
     protected void selectRadiobutton(String buttonName) {
-        selectAndClickElement(By.className("label-radio"), buttonName);
+        selectAndClickElementByName(By.className("label-radio"), buttonName);
     }
 
     //14. Assert radiobutton logo row
@@ -86,7 +86,7 @@ public class Ex2Methods extends Hw2BaseTest {
         // TODO This locator could be improved      -fixed
     protected void dropdownSelect(String dropdownOption) {
         driver.findElement(By.cssSelector("select.uui-form-element")).click();
-        selectAndClickElement(By.cssSelector("select.uui-form-element option"),dropdownOption);
+        selectAndClickElementByName(By.cssSelector("select.uui-form-element option"),dropdownOption);
     }
 
     //16. Assert dropdown log
