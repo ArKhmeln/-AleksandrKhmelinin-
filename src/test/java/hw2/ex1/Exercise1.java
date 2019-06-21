@@ -3,34 +3,36 @@ package hw2.ex1;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Exercise1 extends Ex1Methods {
 
     @Test
     public void ex1EpamSiteTests() {
         goToWebsite("https://epam.github.io/JDI");
-        browserTitle("Home Page");
+        assertBrowserTitle("Home Page");
         login("epam", "1234");
-        // TODO I do not understand this step(
-        username("PITER CHAILOVSKII");
-        assertHeadersection(Arrays.asList("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"));
-        pageImagesExistence();
-        // FIXME test failed here if run through the maven
-        iconTextsDisplayed();
-        // TODO I do not understand this step(
-        mainHeaderText();
-        // TODO I do not understand this step(
-        inframeExistence();
-        // TODO I do not understand this step(
-        iframeEpamLogo();
+        // TODO I do not understand this step(      -fixed
+        assertUsername("PITER CHAILOVSKII");
+        assertHeaderSection(Arrays.asList("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"));
+        assertPageImagesPresence();
+        // FIXME test failed here if run through the maven      -skype
+        assertIconText(expectedIconText);
+        // TODO I do not understand this step(      -fixed
+        assertMainHeaderText(expectedMainHeaderText);
+        // TODO I do not understand this step(      -fixed
+        assertIframePresence();
+        // TODO I do not understand this step(      -fixed
+        assertIframeEpamLogo();
         switchToOriginalWindow();
-        // TODO I do not understand this step(
-        subheaderText("JDI GITHUB");
-        // TODO I do not understand this step(
-        subheaderLink("https://github.com/epam/JDI");
-        // TODO I do not understand this step(
-        leftSectionExistence();
-        // TODO I do not understand this step(
-        footerExistence();
+        // TODO I do not understand this step(      -fixed
+        assertSubHeaderText("JDI GITHUB");
+        // TODO I do not understand this step(      -fixed
+        assertSubHeaderLink("https://github.com/epam/JDI");
+        // TODO I do not understand this step(      -fixed
+        assertLeftSectionPresence("mCSB_1");
+        // TODO I do not understand this step(      -fixed
+        assertFooterPresence();
+        List dfs = Arrays.asList(1, "33", 0-3);
     }
 }
