@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -17,8 +16,8 @@ public class Ex1Methods extends Hw2BaseTest {
     //6. Assert header section
     // TODO What type of elements could contain list?   -fixed
     protected void assertHeaderSection(List<String> expectedElements) {
-        assertDropdownText(null, By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]," +
-                        " ul[class$='navbar-nav m-l8'] a.dropdown-toggle"), false);
+        checkText(null, By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]," +
+                        " ul[class$='navbar-nav m-l8'] a.dropdown-toggle"));
         // TODO looks like crutch   -fixed
         // TODO For collections could be used another assert    -skype
         assertEquals(actualElements, expectedElements);

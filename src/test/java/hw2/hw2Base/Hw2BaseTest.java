@@ -4,17 +4,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-// TODO Unused import
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
+
+// TODO Unused import    -fixed
 
 public class Hw2BaseTest {
 
@@ -46,6 +48,8 @@ public class Hw2BaseTest {
     protected void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        goToWebsite("https://epam.github.io/JDI");
+        login("epam", "1234");
     }
 
     @AfterMethod
@@ -86,32 +90,32 @@ public class Hw2BaseTest {
         Assert.assertTrue(driver.findElement(By.id(id)).isDisplayed());
     }
 
-    protected void assertDropdownText(By clickSelector, By elementsSelector, boolean click) {
-        if (click) {
+    //Click(optional) and assert text
+    protected void checkText(By clickSelector, By elementsSelector) {
+        if (clickSelector != null) {
             driver.findElement(clickSelector).click();
         }
         List<WebElement> headerDropdown = driver.findElements(elementsSelector);
         for(WebElement element: headerDropdown) {
             actualElements.add(element.getText());
-            Assert.assertTrue(element.isDisplayed());
         }
     }
 
-    //11,17 Select/unselect checkboxes
-    protected void selectCheckbox(String checkbox1, String checkbox2) {
-        List<WebElement> checkboxes = driver.findElements(By.className("label-checkbox"));
-        for(WebElement element: checkboxes) {
-            if (element.getText().equals(checkbox1) || element.getText().equals(checkbox2)) {
+    //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
+    protected void selectAndClickElement(By elements, String name) {
+        List<WebElement> buttons = driver.findElements(elements);
+        for(WebElement element: buttons) {
+            if (element.getText().equals(name)) {
                 element.click();
             }
         }
     }
 
     //12,14,16,18 Checkboxes logo rows
-    protected boolean checkLogoText(String text) {
-        List<WebElement> waterCheckboxLogo = driver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
-        for (WebElement element : waterCheckboxLogo) {
-            if (element.getText().endsWith(text)) {
+    protected boolean checkLogoText(String searchingText) {
+        List<WebElement> logoElements = driver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
+        for (WebElement element : logoElements) {
+            if (element.getText().endsWith(searchingText)) {
                 return true;
             }
         }
