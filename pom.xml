@@ -56,6 +56,15 @@
             </properties>
         </profile>
 
+        <profile>
+            <id>hw3-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/forhw3/hw3tests.xml</suite.xml>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -90,6 +99,13 @@
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${hw1.path}</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.6.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
