@@ -95,8 +95,8 @@ public class Hw2BaseTest {
         if (clickSelector != null) {
             driver.findElement(clickSelector).click();
         }
-        List<WebElement> headerDropdown = driver.findElements(elementsSelector);
-        for(WebElement element: headerDropdown) {
+        List<WebElement> webElementsList = driver.findElements(elementsSelector);
+        for(WebElement element: webElementsList) {
             actualElements.add(element.getText());
         }
     }

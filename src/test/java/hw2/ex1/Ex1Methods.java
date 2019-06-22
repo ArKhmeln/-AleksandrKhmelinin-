@@ -35,27 +35,18 @@ public class Ex1Methods extends Hw2BaseTest {
 
     //8. Assert icon texts
     protected void assertIconText(List<String> expectedIconText) {
-        List<WebElement> iconTexts = driver.findElements(By.cssSelector(".main-content .benefit-txt"));
-        List<String> actualIconText = new ArrayList<>();
-        for(WebElement element : iconTexts) {
-            actualIconText.add(element.getText());
-            assertTrue(element.isDisplayed());
-        }
+        checkText(null, By.cssSelector(".main-content .benefit-txt"));
+        assertEquals(actualElements, expectedIconText);
+        actualElements.clear();
+    }
         // TODO COuld this text moved to the parameters of the method? Why?     -fixed
         // TODO For collections could be used another assert    -skype
-        assertEquals(actualIconText, expectedIconText);
-    }
 
     //9. Assert main header text
     protected void assertMainHeaderText(List<String> expectedMainHeaderText) {
-        List<WebElement> mainHeaderText = driver.findElements(By.cssSelector("[class$='text-center']:nth-child(-n+2)"));
-        List<String> actualMainHeaderText = new ArrayList<>();
-        for(WebElement element : mainHeaderText) {
-            actualMainHeaderText.add(element.getText());
-        }
-        // TODO COuld this text moved to the parameters of the method? Why?     -fixed
-        // TODO For collections could be used another assert    -skype
-        assertEquals(actualMainHeaderText, expectedMainHeaderText);
+        checkText(null, By.cssSelector("[class$='text-center']:nth-child(-n+2)"));
+        assertEquals(actualElements, expectedMainHeaderText);
+        actualElements.clear();
     }
 
     //10. Assert inframe existence
