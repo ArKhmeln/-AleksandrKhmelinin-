@@ -29,22 +29,22 @@ public class Exercise2 extends Ex2Methods {
         assertSectionPresence(By.cssSelector("[class~='right-fix-panel']"));   //right section
         // TODO I do not understand this step(      -fixed
         assertSectionPresence(By.id("mCSB_1_container"));   //left section
-        selectCheckbox("Water");
-        selectCheckbox("Wind");
+        selectAndClickElementByName(By.className("label-checkbox"), "Water");   //checkbox
+        selectAndClickElementByName(By.className("label-checkbox"), "Wind");    //checkbox
         // TODO I do not understand this step(      -fixed
-        assertTrue(checkLogoText("Water: condition changed to true"));
-        assertTrue(checkLogoText("Wind: condition changed to true"));
+        assertTrue(logoTextIsValid("Water: condition changed to true"));
+        assertTrue(logoTextIsValid("Wind: condition changed to true"));
         // TODO I do not understand this step(      -fixed
-        selectRadiobutton("Selen");
+        selectAndClickElementByName(By.className("label-radio"), "Selen");      //radiobutton
         // TODO I do not understand this step(      -fixed
-        assertTrue(checkLogoText("metal: value changed to Selen"));
+        assertTrue(logoTextIsValid("metal: value changed to Selen"));
         dropdownSelect("Yellow");
         // TODO I do not understand this step(      -fixed
-        assertTrue(checkLogoText("Colors: value changed to Yellow"));
-        selectCheckbox("Water");
-        selectCheckbox("Wind");
+        assertTrue(logoTextIsValid("Colors: value changed to Yellow"));
+        selectAndClickElementByName(By.className("label-checkbox"), "Water");   //checkbox
+        selectAndClickElementByName(By.className("label-checkbox"), "Wind");    //checkbox
         // TODO I do not understand this step(      -fixed
-        assertTrue(checkLogoText("Water: condition changed to false"));
-        assertTrue(checkLogoText("Wind: condition changed to false"));
+        assertTrue(logoTextIsValid("Water: condition changed to false"));
+        assertTrue(logoTextIsValid("Wind: condition changed to false"));
     }
 }

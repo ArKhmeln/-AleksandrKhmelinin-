@@ -54,9 +54,7 @@ public class Ex2Methods extends Hw2BaseTest {
     // TODO This method looks like Ex1Methods.assertSectionPresence     -fixed
 
     //11. Select checkboxes
-    protected void selectCheckbox(String checkboxName) {
-        selectAndClickElementByName(By.className("label-checkbox"), checkboxName);
-    }
+    //Method is in the Base class
     // TODO This method should be parametrized      -fixed
         // TODO This locators could be improved     -fixed
     //Method is in the BaseTest
@@ -70,9 +68,7 @@ public class Ex2Methods extends Hw2BaseTest {
     //13. Select radio
     // TODO This method should be parametrized      -fixed
         // TODO This locator could be improved      -fixed
-    protected void selectRadiobutton(String buttonName) {
-        selectAndClickElementByName(By.className("label-radio"), buttonName);
-    }
+    //Method is in the Base class
 
     //14. Assert radiobutton logo row
     //Method is in the Base class

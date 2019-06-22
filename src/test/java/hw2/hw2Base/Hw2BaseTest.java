@@ -102,17 +102,17 @@ public class Hw2BaseTest {
     }
 
     //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
-    protected void selectAndClickElementByName(By elements, String name) {
+    protected void selectAndClickElementByName(By elements, String elementName) {
         List<WebElement> buttons = driver.findElements(elements);
         for(WebElement element: buttons) {
-            if (element.getText().equals(name)) {
+            if (element.getText().equals(elementName)) {
                 element.click();
             }
         }
     }
 
     //12,14,16,18 Logo rows
-    protected boolean checkLogoText(String searchingText) {
+    protected boolean logoTextIsValid(String searchingText) {
         List<WebElement> logoElements = driver.findElements(By.xpath("//ul[@class='panel-body-list logs']/li"));
         for (WebElement element : logoElements) {
             if (element.getText().endsWith(searchingText)) {
