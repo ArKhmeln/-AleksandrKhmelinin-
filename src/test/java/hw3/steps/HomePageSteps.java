@@ -88,7 +88,7 @@ public class HomePageSteps {
         assertTrue(homePage.getRightSection().isDisplayed());
     }
 
-    //Steps for the Exercise2 start there
+    //Steps for Exercise2 start here
     public void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
         homePage.checkText(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService());
         assertEquals(homePage.actualElements, expectedHeaderDropdown);

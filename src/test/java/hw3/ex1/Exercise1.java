@@ -25,15 +25,26 @@ public class Exercise1 extends Hw3BaseTest {
     public void ex1EpamSiteTests() {
         homePageSteps.login("epam", "1234");    //to properties
         homePageSteps.assertUserNameTextField("PITER CHAILOVSKII");     //to properties
+        //6. Assert that there are 4 items on the header section are displayed and they have proper texts
         homePageSteps.assertHeaderItemsText(headerMenuItems());
+        //7. Assert that there are 4 images on the Index Page and they are displayed
         homePageSteps.assertPageImagesPresence();
+        //8. Assert that there are 4 texts on the Index Page under icons and they have proper text
         homePageSteps.assertPageIconsText(pageIconsText());
+        //9. Assert a text of the main headers
         homePageSteps.assertMainHeaderText(mainHeaderText());
+        //10. Assert that there is the iframe in the center of page
         homePageSteps.assertIframePresence();
+        //11. Switch to the iframe and check that there is Epam logo in the left top conner of iframe
+        //12. Switch to original window back
         homePageSteps.assertEpamLogoInIframe();
+        //13. Assert a text of the sub header
         homePageSteps.assertSubHeaderText(JDI_GITHUB.getText());
+        //14. Assert that JDI GITHUB is a link and has a proper URL
         homePageSteps.assertSubHeaderLink(LINK.getText());
+        //15. Assert that there is Left Section
         homePageSteps.assertLeftSectionPresence();
+        //16. Assert that there is Footer
         homePageSteps.assertRightSectionPresence();
     }
 }
