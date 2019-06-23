@@ -85,8 +85,8 @@ public class HomePageSteps extends BaseStep {
         assertSectionPresence(homePage.getLeftSection());
     }
 
-    public void assertRightSectionPresence() {
-        assertSectionPresence(homePage.getRightSection());
+    public void assertFooterPresence() {
+        assertSectionPresence(homePage.getFooter());
     }
 
     //Steps for Exercise2 start here

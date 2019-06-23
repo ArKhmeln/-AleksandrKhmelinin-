@@ -47,6 +47,6 @@ public class Exercise1 extends Hw3BaseTest {
         //15. Assert that there is Left Section
         homePageSteps.assertLeftSectionPresence();
         //16. Assert that there is Footer
-        homePageSteps.assertRightSectionPresence();
+        homePageSteps.assertFooterPresence();
     }
 }
