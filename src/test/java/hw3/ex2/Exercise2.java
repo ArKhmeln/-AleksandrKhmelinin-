@@ -1,11 +1,13 @@
 package hw3.ex2;
 
+import hw3.enums.Additional;
 import hw3.hw3Base.Hw3BaseTest;
 import hw3.steps.DifferentElementsPageSteps;
 import hw3.steps.HomePageSteps;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import static hw3.enums.Additional.*;
 import static hw3.enums.DifferentElements.*;
 import static hw3.enums.HeaderServiceDropdown.headerServiceDropdownText;
 import static hw3.enums.LeftSectionServiceDropdown.leftSectionServiceDropdownText;
@@ -14,6 +16,7 @@ import static hw3.enums.LogTexts.*;
 public class Exercise2 extends Hw3BaseTest {
 
     HomePageSteps homePageSteps;
+
     DifferentElementsPageSteps differentElementsPageSteps;
 
     @BeforeMethod
@@ -25,9 +28,11 @@ public class Exercise2 extends Hw3BaseTest {
     }
 
     @Test
-    public void ex2EpamSiteTests() {
-        homePageSteps.login("epam", "1234");
-        homePageSteps.assertUserNameTextField("PITER CHAILOVSKII");
+    public void ex2EpamWebsiteTests() {
+        //3. Perform login
+        homePageSteps.login(login, password);
+        //4. Assert User name in the left-top side of screen that user is loggined
+        homePageSteps.assertUserNameTextField(USER_NAME.getText());
         //5. Click on "Service" subcategory in the header and check that drop down contains options
         homePageSteps.assertHeaderDropdownTextInService(headerServiceDropdownText());
         //6. Click on Service subcategory in the left section and check that drop down contains options

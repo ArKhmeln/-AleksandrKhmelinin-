@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class Exercise2 extends Ex2Methods {
 
     @Test
-    public void ex2EpamSiteTests() {
+    public void ex2EpamWebsiteTests() {
         // TODO I do not understand this step(      -fixed
         assertBrowserTitle("Home Page");
         // TODO I do not understand this step(      -fixed

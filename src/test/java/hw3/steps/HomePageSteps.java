@@ -27,6 +27,8 @@ public class HomePageSteps {
         homePage.clickLoginButton();
     }
 
+
+
     public void assertUserNameTextField(String name) {
         String actualName = homePage.getUserNameElement().getText();
         assertEquals(actualName, "PITER CHAILOVSKII");

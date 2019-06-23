@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class Exercise1 extends Ex1Methods {
 
     @Test
-    public void ex1EpamSiteTests() {
+    public void ex1EpamWebsiteTests() {
         assertBrowserTitle("Home Page");
         // TODO I do not understand this step(      -fixed
         assertUsername("PITER CHAILOVSKII");
