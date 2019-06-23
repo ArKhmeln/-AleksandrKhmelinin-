@@ -1,13 +1,12 @@
 package hw3.ex2;
 
-import hw3.enums.Additional;
 import hw3.hw3Base.Hw3BaseTest;
 import hw3.steps.DifferentElementsPageSteps;
 import hw3.steps.HomePageSteps;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static hw3.enums.Additional.*;
+import static hw3.enums.WebsiteInfo.*;
 import static hw3.enums.DifferentElements.*;
 import static hw3.enums.HeaderServiceDropdown.headerServiceDropdownText;
 import static hw3.enums.LeftSectionServiceDropdown.leftSectionServiceDropdownText;

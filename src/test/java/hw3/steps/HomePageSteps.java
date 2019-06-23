@@ -1,6 +1,6 @@
 package hw3.steps;
 
-import hw3.enums.Additional;
+import hw3.enums.WebsiteInfo;
 import hw3.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class HomePageSteps {
+public class HomePageSteps extends BaseStep {
 
     private WebDriver driver;
 
@@ -28,15 +28,15 @@ public class HomePageSteps {
         homePage.clickLoginButton();
     }
 
-    public void assertUserNameTextField(Additional name) {
+    public void assertUserNameTextField(WebsiteInfo name) {
         String actualName = homePage.getUserNameElement().getText();
         assertEquals(actualName, name.getText());
     }
 
     public void assertHeaderItemsText(List<String> expectedText) {
-        homePage.checkText(null, homePage.getHeaderSectionItems());
-        assertEquals(homePage.actualElements, expectedText);
-        homePage.actualElements.clear();
+        checkText(null, homePage.getHeaderSectionItems());
+        assertEquals(actualElements, expectedText);
+        actualElements.clear();
     }
 
     public void assertPageImagesPresence() {
@@ -47,15 +47,15 @@ public class HomePageSteps {
     }
 
     public void assertPageIconsText(List<String> expectedText) {
-        homePage.checkText(null, homePage.getPageIconText());
-        assertEquals(homePage.actualElements, expectedText);
-        homePage.actualElements.clear();
+        checkText(null, homePage.getPageIconText());
+        assertEquals(actualElements, expectedText);
+        actualElements.clear();
     }
 
     public void assertMainHeaderText(List<String> expectedText) {
-        homePage.checkText(null, homePage.getMainHeaderText());
-        assertEquals(homePage.actualElements, expectedText);
-        homePage.actualElements.clear();
+        checkText(null, homePage.getMainHeaderText());
+        assertEquals(actualElements, expectedText);
+        actualElements.clear();
     }
 
     public void  assertIframePresence() {
@@ -70,36 +70,36 @@ public class HomePageSteps {
         driver.switchTo().defaultContent();
     }
 
-    public void assertSubHeaderText(Additional text) {
+    public void assertSubHeaderText(WebsiteInfo text) {
         String subHeader = homePage.getSubHeaderText().getText();
         assertEquals(subHeader, text.getText());
     }
 
-    public void assertSubHeaderLink(Additional expectedSubHeaderLink) {
+    public void assertSubHeaderLink(WebsiteInfo expectedSubHeaderLink) {
         assertTrue(homePage.getSubHeaderLinkText().isDisplayed());
         String subHeaderLink = homePage.getSubHeaderLink().getAttribute("href");
         assertEquals(subHeaderLink, expectedSubHeaderLink.getText());
     }
 
     public void assertLeftSectionPresence() {
-        assertTrue(homePage.getLeftSection().isDisplayed());
+        assertSectionPresence(homePage.getLeftSection());
     }
 
     public void assertRightSectionPresence() {
-        assertTrue(homePage.getRightSection().isDisplayed());
+        assertSectionPresence(homePage.getRightSection());
     }
 
     //Steps for Exercise2 start here
     public void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
-        homePage.checkText(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService());
-        assertEquals(homePage.actualElements, expectedHeaderDropdown);
-        homePage.actualElements.clear();
+        checkText(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService());
+        assertEquals(actualElements, expectedHeaderDropdown);
+        actualElements.clear();
     }
 
     public void assertLeftSectionDropdownTextInService(List<String> expectedLeftDropdown) {
-        homePage.checkText(homePage.getLeftSectionServiceDropdown(), homePage.getLeftSectionServiceDropdownText());
-        assertEquals(homePage.actualElements, expectedLeftDropdown);
-        homePage.actualElements.clear();
+        checkText(homePage.getLeftSectionServiceDropdown(), homePage.getLeftSectionServiceDropdownText());
+        assertEquals(actualElements, expectedLeftDropdown);
+        actualElements.clear();
     }
 
     public void goToServiceDifferentElementsInHeader() {

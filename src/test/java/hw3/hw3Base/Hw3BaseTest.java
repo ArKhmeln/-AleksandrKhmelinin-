@@ -1,5 +1,6 @@
 package hw3.hw3Base;
 
+import hw3.enums.WebsiteInfo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,12 +9,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Properties;
 
+import static hw3.enums.WebsiteInfo.*;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Hw3BaseTest {
@@ -37,9 +36,9 @@ public class Hw3BaseTest {
     protected void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        goToWebsite("https://epam.github.io/JDI");
+        goToWebsite(LINK_MAIN);
+        assertBrowserTitle(TITLE);
         userData();
-        assertBrowserTitle("Home Page");
     }
 
     @AfterMethod
@@ -47,8 +46,7 @@ public class Hw3BaseTest {
         driver.close();
     }
 
-
-    //Perform login
+    //data from property file
     protected void userData() {
         try {
             fis = new FileInputStream("src/main/resources/config.properties");
@@ -61,14 +59,12 @@ public class Hw3BaseTest {
     }
 
     //Open test site
-    protected void goToWebsite(String URL) {
-        driver.get(URL);
+    protected void goToWebsite(WebsiteInfo URL) {
+        driver.get(URL.getText());
     }
 
     //Assert browser title
-    protected void assertBrowserTitle(String browserTitle) {
-        assertEquals(driver.getTitle(), browserTitle);
+    protected void assertBrowserTitle(WebsiteInfo browserTitle) {
+        assertEquals(driver.getTitle(), browserTitle.getText());
     }
-
 }
-

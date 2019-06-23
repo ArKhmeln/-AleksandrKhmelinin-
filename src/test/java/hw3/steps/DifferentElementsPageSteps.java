@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class DifferentElementsPageSteps {
+public class DifferentElementsPageSteps extends BaseStep {
 
     private WebDriver driver;
 
@@ -31,32 +31,32 @@ public class DifferentElementsPageSteps {
     }
 
     public void assertLeftSectionPresence() {
-        assertTrue(differentElementsPage.getLeftSection().isDisplayed());
+        assertSectionPresence(differentElementsPage.getLeftSection());
     }
 
     public void assertRightSectionPresence() {
-        assertTrue(differentElementsPage.getRightSection().isDisplayed());
+        assertSectionPresence(differentElementsPage.getRightSection());
     }
 
     public void selectAndClickCheckbox(DifferentElements ... checkboxes) {
         for(DifferentElements name: checkboxes) {
-            differentElementsPage.selectAndClickElementByName(differentElementsPage.getCheckboxes(), name);
+            selectAndClickElementByName(differentElementsPage.getCheckboxes(), name);
         }
     }
 
     public void assertLogByText(LogTexts ... expectedLogs) {
         for(LogTexts text: expectedLogs) {
-            assertTrue(differentElementsPage.checkLogoText(differentElementsPage.getLogs(), text));
+            assertTrue(checkLogoText(differentElementsPage.getLogs(), text));
         }
     }
 
     public void selectAndClickRadiobutton(DifferentElements name) {
-        differentElementsPage.selectAndClickElementByName(differentElementsPage.getRadiobuttons(), name);
+        selectAndClickElementByName(differentElementsPage.getRadiobuttons(), name);
     }
 
     public void selectAndClickDropdown(DifferentElements name) {
         differentElementsPage.getDropdownMenu().click();
-        differentElementsPage.selectAndClickElementByName(differentElementsPage.getDropdownMenuElements(), name);
+        selectAndClickElementByName(differentElementsPage.getDropdownMenuElements(), name);
     }
 
 

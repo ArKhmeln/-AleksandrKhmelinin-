@@ -1,13 +1,15 @@
 package hw3.enums;
 
-public enum Additional {
+public enum WebsiteInfo {
 
+    LINK_MAIN("https://epam.github.io/JDI/"),
     JDI_GITHUB("JDI GITHUB"),
-    LINK("https://github.com/epam/JDI"),
+    LINK_JDI("https://github.com/epam/JDI"),
+    TITLE("Home Page"),
     USER_NAME("PITER CHAILOVSKII");
     final String name;
 
-    Additional(String name) {
+    WebsiteInfo(String name) {
         this.name = name;
     }
 

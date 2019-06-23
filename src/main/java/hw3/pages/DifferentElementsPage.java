@@ -1,7 +1,5 @@
 package hw3.pages;
 
-import hw3.enums.DifferentElements;
-import hw3.enums.LogTexts;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,24 +39,6 @@ public class DifferentElementsPage extends BasePage {
     @FindBy(css = "select.uui-form-element option")
     private List<WebElement> dropdownMenuElements;
 
-    //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
-    public void selectAndClickElementByName(List<WebElement> items, DifferentElements elementName) {
-        for(WebElement element: items) {
-            if (element.getText().equals(elementName.getName())) {
-                element.click();
-            }
-        }
-    }
-
-    //12,14,16,18 Logo rows
-    public boolean checkLogoText(List<WebElement> logoElements, LogTexts searchingText) {
-        for (WebElement element : logoElements) {
-            if (element.getText().endsWith(searchingText.getText())) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public List<WebElement> getCheckboxes() {
         return checkboxes;
