@@ -10,30 +10,28 @@ import static org.testng.Assert.assertEquals;
 public class Ex2Methods extends Hw2BaseTest {
 
     //5. Click & assert header dropdown
-    // TODO What type of elements could contain list?   -fixed
-    // TODO This method looks like Ex1Methods.assertHeaderSectionText   -fixed
+    // TODO This method looks like code duplication from assertHeaderSectionText Ex1Methods class
     protected void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
+        // TODO Why this method does not return List<String>
         checkText(By.cssSelector("li.dropdown"), By.xpath("//ul[@class='dropdown-menu']//li"));
-        // TODO For collections could be used another assert    -skype
         assertEquals(actualElements, expectedHeaderDropdown);
+        // TODO Is clear required here?
         actualElements.clear();
     }
 
     //6. Click & assert left dropdown
+    // TODO This method looks like code duplication from assertHeaderDropdownTextInService current class
     protected void assertLeftDropdownTextInService(List<String> expectedLeftDropdown) {
-        // TODO This locator could be improved      -fixed
-        // TODO This locator could be improved  -fixed
-        // TODO Code duplication    -fixed
+        // TODO Why this method does not return List<String>
         checkText(By.cssSelector("li.menu-title"), By.xpath("//li[@class='menu-title' " +
                 "and contains(.//span, 'Service')]//li//span"));
         assertEquals(actualElements, expectedLeftDropdown);
+        // TODO Is clear required here?
         actualElements.clear();
     }
 
     //7. Open Service > Different elements
-    // TODO Please follow java code convention for the method naming    -fixed
     protected void goToServiceDifferentElementsInHeader() {
-        // TODO This locator could be improved      -fixed
         driver.findElement(By.cssSelector("header .dropdown-toggle")).click();
         driver.findElement(By.xpath("//a[contains(text(), 'Different elements')]")).click();
     }
@@ -51,35 +49,21 @@ public class Ex2Methods extends Hw2BaseTest {
     }
 
     //Step 10 assert left section
-    // TODO This method looks like Ex1Methods.assertSectionPresence     -fixed
-
     //11. Select checkboxes
     //Method is in the Base class
-    // TODO This method should be parametrized      -fixed
-        // TODO This locators could be improved     -fixed
     //Method is in the BaseTest
 
     //12. Assert checkboxes logo rows
     //Method in the Base Test
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
-        // TODO This locator could be improved      -fixed
 
     //13. Select radio
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
     //Method is in the Base class
 
     //14. Assert radiobutton logo row
     //Method is in the Base class
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
 
 
     //15. Select in dropdown
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
-        // TODO This locator could be improved      -fixed
     protected void dropdownSelect(String dropdownOption) {
         driver.findElement(By.cssSelector("select.uui-form-element")).click();
         selectAndClickElementByName(By.cssSelector("select.uui-form-element option"),dropdownOption);
@@ -87,19 +71,11 @@ public class Ex2Methods extends Hw2BaseTest {
 
     //16. Assert dropdown log
     //Method is in the Base class
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
 
     //17. Unselect checkboxes
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
-        // TODO This locator could be improved      -fixed
     //This method is in the BaseTest
 
     //18. Assert checkboxes unselect log
     //Method in the Base class
-    // TODO This method should be parametrized      -fixed
-        // TODO This locator could be improved      -fixed
-        // TODO This locator could be improved      -fixed
 }
 

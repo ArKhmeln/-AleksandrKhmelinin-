@@ -16,14 +16,14 @@ import java.util.List;
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertTrue;
 
-// TODO Unused import    -fixed
-
 public class Hw2BaseTest {
 
     protected WebDriver driver;
 
+    // TODO Why this field is required?
     protected List<String> actualElements = new ArrayList<>();
 
+    // TODO It could be static final
     protected List<String> expectedIconText = Arrays.asList("To include good practices\n" +
             "and ideas from successful\n" +
             "EPAM project", "To be flexible and\n" +
@@ -32,6 +32,7 @@ public class Hw2BaseTest {
             "some external projects),\n" +
             "wish to get more…");
 
+    // TODO It could be static final
     protected List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
             " CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT" +
             " ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO" +
@@ -80,7 +81,6 @@ public class Hw2BaseTest {
     //Assert user name
     protected void assertUsername(String expectedUsername) {
         WebElement actualUsername = driver.findElement(By.id("user-name"));
-        // TODO It is better check visibility and after that text :)    -fixed
         assertTrue(actualUsername.isDisplayed());
         assertEquals(actualUsername.getText(), expectedUsername);
     }
@@ -92,6 +92,7 @@ public class Hw2BaseTest {
 
     //Click(optional) and assert text
     protected void checkText(By clickSelector, By elementsSelector) {
+        // TODO I do not get it
         if (clickSelector != null) {
             driver.findElement(clickSelector).click();
         }
@@ -107,6 +108,7 @@ public class Hw2BaseTest {
         for(WebElement element: buttons) {
             if (element.getText().equals(elementName)) {
                 element.click();
+                // TODO break required here
             }
         }
     }
