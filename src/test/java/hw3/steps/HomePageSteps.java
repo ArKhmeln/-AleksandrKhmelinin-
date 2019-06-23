@@ -1,5 +1,6 @@
 package hw3.steps;
 
+import hw3.enums.Additional;
 import hw3.pages.HomePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,11 +28,9 @@ public class HomePageSteps {
         homePage.clickLoginButton();
     }
 
-
-
-    public void assertUserNameTextField(String name) {
+    public void assertUserNameTextField(Additional name) {
         String actualName = homePage.getUserNameElement().getText();
-        assertEquals(actualName, "PITER CHAILOVSKII");
+        assertEquals(actualName, name.getText());
     }
 
     public void assertHeaderItemsText(List<String> expectedText) {
@@ -71,15 +70,15 @@ public class HomePageSteps {
         driver.switchTo().defaultContent();
     }
 
-    public void assertSubHeaderText(String text) {
+    public void assertSubHeaderText(Additional text) {
         String subHeader = homePage.getSubHeaderText().getText();
-        assertEquals(subHeader, text);
+        assertEquals(subHeader, text.getText());
     }
 
-    public void assertSubHeaderLink(String expectedSubHeaderLink) {
+    public void assertSubHeaderLink(Additional expectedSubHeaderLink) {
         assertTrue(homePage.getSubHeaderLinkText().isDisplayed());
         String subHeaderLink = homePage.getSubHeaderLink().getAttribute("href");
-        assertEquals(subHeaderLink, expectedSubHeaderLink);
+        assertEquals(subHeaderLink, expectedSubHeaderLink.getText());
     }
 
     public void assertLeftSectionPresence() {

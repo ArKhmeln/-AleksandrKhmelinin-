@@ -38,12 +38,16 @@ public class DifferentElementsPageSteps {
         assertTrue(differentElementsPage.getRightSection().isDisplayed());
     }
 
-    public void selectAndClickCheckbox(DifferentElements name) {
-        differentElementsPage.selectAndClickElementByName(differentElementsPage.getCheckboxes(), name);
+    public void selectAndClickCheckbox(DifferentElements ... checkboxes) {
+        for(DifferentElements name: checkboxes) {
+            differentElementsPage.selectAndClickElementByName(differentElementsPage.getCheckboxes(), name);
+        }
     }
 
-    public void assertLogByText(LogTexts expectedLog) {
-        assertTrue(differentElementsPage.checkLogoText(differentElementsPage.getLogs(), expectedLog));
+    public void assertLogByText(LogTexts ... expectedLogs) {
+        for(LogTexts text: expectedLogs) {
+            assertTrue(differentElementsPage.checkLogoText(differentElementsPage.getLogs(), text));
+        }
     }
 
     public void selectAndClickRadiobutton(DifferentElements name) {

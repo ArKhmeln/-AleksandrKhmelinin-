@@ -32,7 +32,7 @@ public class Exercise2 extends Hw3BaseTest {
         //3. Perform login
         homePageSteps.login(login, password);
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePageSteps.assertUserNameTextField(USER_NAME.getText());
+        homePageSteps.assertUserNameTextField(USER_NAME);
         //5. Click on "Service" subcategory in the header and check that drop down contains options
         homePageSteps.assertHeaderDropdownTextInService(headerServiceDropdownText());
         //6. Click on Service subcategory in the left section and check that drop down contains options
@@ -46,11 +46,9 @@ public class Exercise2 extends Hw3BaseTest {
         //10. Assert that there is Left Section
         differentElementsPageSteps.assertLeftSectionPresence();
         //11. Select checkboxes
-        differentElementsPageSteps.selectAndClickCheckbox(WATER);
-        differentElementsPageSteps.selectAndClickCheckbox(WIND);
+        differentElementsPageSteps.selectAndClickCheckbox(WATER, WIND);
         //12. Assert that for each checkbox there is an individual log row and value is corresponded to the status.
-        differentElementsPageSteps.assertLogByText(WATER_TRUE);
-        differentElementsPageSteps.assertLogByText(WIND_TRUE);
+        differentElementsPageSteps.assertLogByText(WATER_TRUE, WIND_TRUE);
         //13. Select radio
         differentElementsPageSteps.selectAndClickRadiobutton(SELEN);
         //14. Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton.
@@ -60,10 +58,8 @@ public class Exercise2 extends Hw3BaseTest {
         //16. Assert that for dropdown there is a log row and value is corresponded to the selected value.
         differentElementsPageSteps.assertLogByText(COLORS_YELLOW);
         //17. Unselect and assert checkboxes
-        differentElementsPageSteps.selectAndClickCheckbox(WATER);
-        differentElementsPageSteps.selectAndClickCheckbox(WIND);
+        differentElementsPageSteps.selectAndClickCheckbox(WATER, WIND);
         //18. Assert that for each checkbox there is an individual log row and value is corresponded to the status.
-        differentElementsPageSteps.assertLogByText(WATER_FALSE);
-        differentElementsPageSteps.assertLogByText(WIND_FALSE);
+        differentElementsPageSteps.assertLogByText(WATER_FALSE, WIND_FALSE);
     }
 }

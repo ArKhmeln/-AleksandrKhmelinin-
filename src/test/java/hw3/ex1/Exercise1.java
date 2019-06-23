@@ -27,7 +27,7 @@ public class Exercise1 extends Hw3BaseTest {
         //3. Perform login
         homePageSteps.login(login, password);
         //4. Assert User name in the left-top side of screen that user is loggined
-        homePageSteps.assertUserNameTextField(USER_NAME.getText());
+        homePageSteps.assertUserNameTextField(USER_NAME);
         //6. Assert that there are 4 items on the header section are displayed and they have proper texts
         homePageSteps.assertHeaderItemsText(headerMenuItems());
         //7. Assert that there are 4 images on the Index Page and they are displayed
@@ -42,9 +42,9 @@ public class Exercise1 extends Hw3BaseTest {
         //12. Switch to original window back
         homePageSteps.assertEpamLogoInIframe();
         //13. Assert a text of the sub header
-        homePageSteps.assertSubHeaderText(JDI_GITHUB.getText());
+        homePageSteps.assertSubHeaderText(JDI_GITHUB);
         //14. Assert that JDI GITHUB is a link and has a proper URL
-        homePageSteps.assertSubHeaderLink(LINK.getText());
+        homePageSteps.assertSubHeaderLink(LINK);
         //15. Assert that there is Left Section
         homePageSteps.assertLeftSectionPresence();
         //16. Assert that there is Footer
