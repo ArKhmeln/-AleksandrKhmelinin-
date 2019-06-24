@@ -4,6 +4,7 @@ import hw2.hw2Base.Hw2BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;
@@ -13,12 +14,10 @@ public class Ex1Methods extends Hw2BaseTest {
 
     //6. Assert header section
     protected void assertHeaderSectionText(List<String> expectedElements) {
-        // TODO Why this method does not return List<String>
-        checkText(null, By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]," +
-                        " ul[class$='navbar-nav m-l8'] a.dropdown-toggle"));
-        assertEquals(actualElements, expectedElements);
-        // TODO Is clear required here?
-        actualElements.clear();
+        // TODO Why this method does not return List<String>    -fixed
+        checkTextEquality(By.cssSelector("ul[class$='navbar-nav m-l8']>li>a[href]," +
+                " ul[class$='navbar-nav m-l8'] a.dropdown-toggle"), expectedElements);
+        // TODO Is clear required here?    -fixed
     }
 
     //7. Assert index page images
@@ -32,35 +31,34 @@ public class Ex1Methods extends Hw2BaseTest {
 
     //8. Assert icon texts
     protected void assertIconText(List<String> expectedIconText) {
-        // TODO Why this method does not return List<String>
-        checkText(null, By.cssSelector(".main-content .benefit-txt"));
-        assertEquals(actualElements, expectedIconText);
-        // TODO Is clear required here?
-        actualElements.clear();
+        // TODO Why this method does not return List<String>    -fixed
+        checkTextEquality(By.cssSelector(".main-content .benefit-txt"), expectedIconText);
+        // TODO Is clear required here?    -fixed
     }
 
     //9. Assert main header text
     protected void assertMainHeaderText(List<String> expectedMainHeaderText) {
-        // TODO Why this method does not return List<String>
-        checkText(null, By.cssSelector("[class$='text-center']:nth-child(-n+2)"));
-        assertEquals(actualElements, expectedMainHeaderText);
-        // TODO Is clear required here?
-        actualElements.clear();
+        // TODO Why this method does not return List<String>    -fixed
+        checkTextEquality(By.cssSelector("[class$='text-center']:nth-child(-n+2)"), expectedMainHeaderText);
+        // TODO Is clear required here?    -fixed
+    }
+
+    protected void checkTextEquality(By textToCheck, List<String> expectedElements) {
+        List<String> actualElements = getTextFromElements(textToCheck);
+        assertEquals(actualElements, expectedElements);
     }
 
     //10. Assert inframe existence
     protected void assertIframePresence() {
-        // TODO Why this variable required?
-        WebElement inframe = driver.findElement(By.id("iframe"));
-        assertTrue(inframe.isDisplayed());
+        // TODO Why this variable required?     -fixed
+        assertTrue(driver.findElement(By.id("iframe")).isDisplayed());
     }
 
     //11. Switch to the inframe, check EPAM logo
     protected void assertIframeEpamLogo() {
         driver.switchTo().frame("iframe");
-        // TODO Why this variable required?
-        WebElement iframeEPAMLogo = driver.findElement(By.id("epam_logo"));
-        assertTrue(iframeEPAMLogo.isDisplayed());
+        // TODO Why this variable required?     -fixed
+        assertTrue(driver.findElement(By.id("epam_logo")).isDisplayed());
     }
 
     //12. Switch to original window
@@ -70,9 +68,8 @@ public class Ex1Methods extends Hw2BaseTest {
 
     //13. Assert sub header text
     protected void assertSubHeaderText(String expectedSubHeader) {
-        // TODO Why this variable required?
-        WebElement subHeader = driver.findElement(By.cssSelector(".text-center>a"));
-        assertEquals(subHeader.getText(), expectedSubHeader);
+        // TODO Why this variable required?     -fixed
+        assertEquals(driver.findElement(By.cssSelector(".text-center>a")).getText(), expectedSubHeader);
     }
 
     //14 Assert sub header link
@@ -82,6 +79,5 @@ public class Ex1Methods extends Hw2BaseTest {
         String actualSubHeaderLink = subHeader.getAttribute("href");
         assertEquals(actualSubHeaderLink, expectedSubHeaderLink);
     }
-
 }
 

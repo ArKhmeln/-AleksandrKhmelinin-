@@ -34,9 +34,8 @@ public class HomePageSteps extends BaseStep {
     }
 
     public void assertHeaderItemsText(List<String> expectedText) {
-        checkText(null, homePage.getHeaderSectionItems());
+        List<String> actualElements = getTextFromElements(null, homePage.getHeaderSectionItems());
         assertEquals(actualElements, expectedText);
-        actualElements.clear();
     }
 
     public void assertPageImagesPresence() {
@@ -47,15 +46,13 @@ public class HomePageSteps extends BaseStep {
     }
 
     public void assertPageIconsText(List<String> expectedText) {
-        checkText(null, homePage.getPageIconText());
+        List<String> actualElements = getTextFromElements(null, homePage.getPageIconText());
         assertEquals(actualElements, expectedText);
-        actualElements.clear();
     }
 
     public void assertMainHeaderText(List<String> expectedText) {
-        checkText(null, homePage.getMainHeaderText());
+        List<String> actualElements = getTextFromElements(null, homePage.getMainHeaderText());
         assertEquals(actualElements, expectedText);
-        actualElements.clear();
     }
 
     public void  assertIframePresence() {
@@ -91,15 +88,13 @@ public class HomePageSteps extends BaseStep {
 
     //Steps for Exercise2 start here
     public void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
-        checkText(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService());
+        List<String> actualElements = getTextFromElements(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService());
         assertEquals(actualElements, expectedHeaderDropdown);
-        actualElements.clear();
     }
 
     public void assertLeftSectionDropdownTextInService(List<String> expectedLeftDropdown) {
-        checkText(homePage.getLeftSectionServiceDropdown(), homePage.getLeftSectionServiceDropdownText());
+        List<String> actualElements = getTextFromElements(homePage.getLeftSectionServiceDropdown(), homePage.getLeftSectionServiceDropdownText());
         assertEquals(actualElements, expectedLeftDropdown);
-        actualElements.clear();
     }
 
     public void goToServiceDifferentElementsInHeader() {

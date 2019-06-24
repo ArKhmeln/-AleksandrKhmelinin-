@@ -11,8 +11,6 @@ import static org.testng.Assert.assertTrue;
 
 public abstract class BaseStep {
 
-    protected List<String> actualElements = new ArrayList<>();
-
     //Assert section presence
     protected void assertSectionPresence(WebElement element) {
         assertTrue(element.isDisplayed());
@@ -23,6 +21,7 @@ public abstract class BaseStep {
         for(WebElement element: items) {
             if (element.getText().equals(elementName.getName())) {
                 element.click();
+                break;
             }
         }
     }
@@ -37,13 +36,15 @@ public abstract class BaseStep {
         return false;
     }
 
-    //Click(optional) and assert text
-    protected void checkText(WebElement elementToClick, List<WebElement> elementsList) {
+    //Click(optional) get text from elements
+    protected List<String> getTextFromElements(WebElement elementToClick, List<WebElement> elementsList) {
         if (elementToClick != null) {
             elementToClick.click();
         }
+        List<String> actualElements = new ArrayList<>();
         for (WebElement element : elementsList) {
             actualElements.add(element.getText());
         }
+        return actualElements;
     }
 }

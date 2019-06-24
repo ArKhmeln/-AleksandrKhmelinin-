@@ -20,11 +20,10 @@ public class Hw2BaseTest {
 
     protected WebDriver driver;
 
-    // TODO Why this field is required?
-    protected List<String> actualElements = new ArrayList<>();
+    // TODO Why this field is required?     -fixed
 
-    // TODO It could be static final
-    protected List<String> expectedIconText = Arrays.asList("To include good practices\n" +
+    // TODO It could be static final    -fixed
+    final static protected List<String> expectedIconText = Arrays.asList("To include good practices\n" +
             "and ideas from successful\n" +
             "EPAM project", "To be flexible and\n" +
             "customizable", "To be multiplatform", "Already have good base\n" +
@@ -32,8 +31,8 @@ public class Hw2BaseTest {
             "some external projects),\n" +
             "wish to get more…");
 
-    // TODO It could be static final
-    protected List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
+    // TODO It could be static final    -fixed
+    final static protected List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
             " CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT" +
             " ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO" +
             " CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT" +
@@ -90,25 +89,38 @@ public class Hw2BaseTest {
         Assert.assertTrue(driver.findElement(locator).isDisplayed());
     }
 
-    //Click(optional) and assert text
-    protected void checkText(By clickSelector, By elementsSelector) {
-        // TODO I do not get it
-        if (clickSelector != null) {
-            driver.findElement(clickSelector).click();
-        }
+    //Click(optional) and get text from elements
+    protected List<String> getTextFromElements(By elementsSelector) {
+        // TODO I do not get it     -fixed
+        List<String> actualElements = new ArrayList<>();
         List<WebElement> webElementsList = driver.findElements(elementsSelector);
         for(WebElement element: webElementsList) {
             actualElements.add(element.getText());
         }
+        return actualElements;
     }
 
     //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
-    protected void selectAndClickElementByName(By elements, String elementName) {
-        List<WebElement> buttons = driver.findElements(elements);
+    protected void selectAndClickElementByName(String buttonName, String elementName) {
+        switch (buttonName) {
+            case "checkbox":
+                findElementByName(driver.findElements(By.className("label-checkbox")), elementName);
+                break;
+            case "radiobutton":
+                findElementByName(driver.findElements(By.className("label-radio")), elementName);
+                break;
+            case "dropdown":
+                findElementByName(driver.findElements(By.cssSelector("select.uui-form-element option")), elementName);
+                break;
+        }
+    }
+
+    protected void findElementByName(List<WebElement> buttons, String elementName) {
         for(WebElement element: buttons) {
             if (element.getText().equals(elementName)) {
                 element.click();
-                // TODO break required here
+                break;
+                // TODO break required here     -fixed
             }
         }
     }

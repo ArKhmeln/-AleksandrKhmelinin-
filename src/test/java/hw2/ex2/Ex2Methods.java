@@ -10,24 +10,21 @@ import static org.testng.Assert.assertEquals;
 public class Ex2Methods extends Hw2BaseTest {
 
     //5. Click & assert header dropdown
-    // TODO This method looks like code duplication from assertHeaderSectionText Ex1Methods class
+    // TODO This method looks like code duplication from assertHeaderSectionText Ex1Methods class   -fixed
     protected void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
-        // TODO Why this method does not return List<String>
-        checkText(By.cssSelector("li.dropdown"), By.xpath("//ul[@class='dropdown-menu']//li"));
-        assertEquals(actualElements, expectedHeaderDropdown);
-        // TODO Is clear required here?
-        actualElements.clear();
+        // TODO Why this method does not return List<String>    -fixed
+        clickAndCheckTextEquality(By.cssSelector("li.dropdown"),
+                By.xpath("//ul[@class='dropdown-menu']//li"), expectedHeaderDropdown);
+        // TODO Is clear required here?    -fixed
     }
 
     //6. Click & assert left dropdown
-    // TODO This method looks like code duplication from assertHeaderDropdownTextInService current class
+    // TODO This method looks like code duplication from assertHeaderDropdownTextInService current class    -fixed
     protected void assertLeftDropdownTextInService(List<String> expectedLeftDropdown) {
-        // TODO Why this method does not return List<String>
-        checkText(By.cssSelector("li.menu-title"), By.xpath("//li[@class='menu-title' " +
-                "and contains(.//span, 'Service')]//li//span"));
-        assertEquals(actualElements, expectedLeftDropdown);
-        // TODO Is clear required here?
-        actualElements.clear();
+        // TODO Why this method does not return List<String>    -fixed
+        clickAndCheckTextEquality(By.cssSelector("li.menu-title"), By.xpath("//li[@class='menu-title' " +
+                "and contains(.//span, 'Service')]//li//span"), expectedLeftDropdown);
+        // TODO Is clear required here?    -fixed
     }
 
     //7. Open Service > Different elements
@@ -48,34 +45,16 @@ public class Ex2Methods extends Hw2BaseTest {
         assertEquals(actualButtonsAmount, 2);
     }
 
-    //Step 10 assert left section
-    //11. Select checkboxes
-    //Method is in the Base class
-    //Method is in the BaseTest
-
-    //12. Assert checkboxes logo rows
-    //Method in the Base Test
-
-    //13. Select radio
-    //Method is in the Base class
-
-    //14. Assert radiobutton logo row
-    //Method is in the Base class
-
-
     //15. Select in dropdown
     protected void dropdownSelect(String dropdownOption) {
         driver.findElement(By.cssSelector("select.uui-form-element")).click();
-        selectAndClickElementByName(By.cssSelector("select.uui-form-element option"),dropdownOption);
+        selectAndClickElementByName(("dropdown"),dropdownOption);
     }
 
-    //16. Assert dropdown log
-    //Method is in the Base class
-
-    //17. Unselect checkboxes
-    //This method is in the BaseTest
-
-    //18. Assert checkboxes unselect log
-    //Method in the Base class
+    protected void clickAndCheckTextEquality(By clickSelector, By textToCheck, List<String> expectedElements) {
+        driver.findElement(clickSelector).click();
+        List<String> actualElements = getTextFromElements(textToCheck);
+        assertEquals(actualElements, expectedElements);
+    }
 }
 

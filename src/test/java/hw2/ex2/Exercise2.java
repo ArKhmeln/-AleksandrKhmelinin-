@@ -21,17 +21,17 @@ public class Exercise2 extends Ex2Methods {
         assertPageElementsPresence();
         assertSectionPresence(By.cssSelector("[class~='right-fix-panel']"));   //right section
         assertSectionPresence(By.id("mCSB_1_container"));   //left section
-        selectAndClickElementByName(By.className("label-checkbox"), "Water");   //checkbox
-        selectAndClickElementByName(By.className("label-checkbox"), "Wind");    //checkbox
-        // TODO Is it possible use name of the checkboxes, radiobuttons and etc. as parameters
+        selectAndClickElementByName("checkbox", "Water");   //checkbox
+        selectAndClickElementByName("checkbox", "Wind");    //checkbox
+        // TODO Is it possible use name of the checkboxes, radiobuttons and etc. as parameters  -fixed
         assertTrue(logoTextIsValid("Water: condition changed to true"));
         assertTrue(logoTextIsValid("Wind: condition changed to true"));
-        selectAndClickElementByName(By.className("label-radio"), "Selen");      //radiobutton
+        selectAndClickElementByName("radiobutton", "Selen");      //radiobutton
         assertTrue(logoTextIsValid("metal: value changed to Selen"));
         dropdownSelect("Yellow");
         assertTrue(logoTextIsValid("Colors: value changed to Yellow"));
-        selectAndClickElementByName(By.className("label-checkbox"), "Water");   //checkbox
-        selectAndClickElementByName(By.className("label-checkbox"), "Wind");    //checkbox
+        selectAndClickElementByName("checkbox", "Water");   //checkbox
+        selectAndClickElementByName("checkbox", "Wind");    //checkbox
         assertTrue(logoTextIsValid("Water: condition changed to false"));
         assertTrue(logoTextIsValid("Wind: condition changed to false"));
     }
