@@ -10,21 +10,15 @@ import static org.testng.Assert.assertEquals;
 public class Ex2Methods extends Hw2BaseTest {
 
     //5. Click & assert header dropdown
-    // TODO This method looks like code duplication from assertHeaderSectionText Ex1Methods class   -fixed
     protected void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
-        // TODO Why this method does not return List<String>    -fixed
         clickAndCheckTextEquality(By.cssSelector("li.dropdown"),
                 By.xpath("//ul[@class='dropdown-menu']//li"), expectedHeaderDropdown);
-        // TODO Is clear required here?    -fixed
     }
 
     //6. Click & assert left dropdown
-    // TODO This method looks like code duplication from assertHeaderDropdownTextInService current class    -fixed
     protected void assertLeftDropdownTextInService(List<String> expectedLeftDropdown) {
-        // TODO Why this method does not return List<String>    -fixed
         clickAndCheckTextEquality(By.cssSelector("li.menu-title"), By.xpath("//li[@class='menu-title' " +
                 "and contains(.//span, 'Service')]//li//span"), expectedLeftDropdown);
-        // TODO Is clear required here?    -fixed
     }
 
     //7. Open Service > Different elements

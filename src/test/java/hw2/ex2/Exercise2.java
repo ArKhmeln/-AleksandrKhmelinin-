@@ -23,7 +23,6 @@ public class Exercise2 extends Ex2Methods {
         assertSectionPresence(By.id("mCSB_1_container"));   //left section
         selectAndClickElementByName("checkbox", "Water");   //checkbox
         selectAndClickElementByName("checkbox", "Wind");    //checkbox
-        // TODO Is it possible use name of the checkboxes, radiobuttons and etc. as parameters  -fixed
         assertTrue(logoTextIsValid("Water: condition changed to true"));
         assertTrue(logoTextIsValid("Wind: condition changed to true"));
         selectAndClickElementByName("radiobutton", "Selen");      //radiobutton

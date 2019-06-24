@@ -20,9 +20,7 @@ public class Hw2BaseTest {
 
     protected WebDriver driver;
 
-    // TODO Why this field is required?     -fixed
-
-    // TODO It could be static final    -fixed
+    // TODO protected static final :) Please look to the Java code convention
     final static protected List<String> expectedIconText = Arrays.asList("To include good practices\n" +
             "and ideas from successful\n" +
             "EPAM project", "To be flexible and\n" +
@@ -31,7 +29,7 @@ public class Hw2BaseTest {
             "some external projects),\n" +
             "wish to get more…");
 
-    // TODO It could be static final    -fixed
+    // TODO protected static final :) Please look to the Java code convention
     final static protected List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
             " CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT" +
             " ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO" +
@@ -91,7 +89,6 @@ public class Hw2BaseTest {
 
     //Click(optional) and get text from elements
     protected List<String> getTextFromElements(By elementsSelector) {
-        // TODO I do not get it     -fixed
         List<String> actualElements = new ArrayList<>();
         List<WebElement> webElementsList = driver.findElements(elementsSelector);
         for(WebElement element: webElementsList) {
@@ -120,7 +117,6 @@ public class Hw2BaseTest {
             if (element.getText().equals(elementName)) {
                 element.click();
                 break;
-                // TODO break required here     -fixed
             }
         }
     }
