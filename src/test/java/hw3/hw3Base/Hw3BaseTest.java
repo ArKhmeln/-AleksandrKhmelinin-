@@ -49,6 +49,7 @@ public class Hw3BaseTest {
     //data from property file
     protected void userData() {
         try {
+            // TODO Is fis closed anywhere?
             fis = new FileInputStream("src/main/resources/config.properties");
             property.load(fis);
         } catch (IOException e) {
