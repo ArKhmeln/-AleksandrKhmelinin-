@@ -19,18 +19,18 @@ public class Exercise2 extends Ex2Methods {
                 "Simple Table", "Search", "User Table", "Table with pages", "Different elements", "Performance"));
         goToServiceDifferentElementsInHeader();
         assertPageElementsPresence();
-        assertSectionPresence(By.cssSelector("[class~='right-fix-panel']"));   //right section
+        assertSectionPresence(By.cssSelector("[class~='right-fix-panel']"));
         assertSectionPresence(By.id("mCSB_1_container"));   //left section
-        selectAndClickElementByName("checkbox", "Water");   //checkbox
-        selectAndClickElementByName("checkbox", "Wind");    //checkbox
+        selectAndClickElementByName("checkbox", "Water");
+        selectAndClickElementByName("checkbox", "Wind");
         assertTrue(logoTextIsValid("Water: condition changed to true"));
         assertTrue(logoTextIsValid("Wind: condition changed to true"));
-        selectAndClickElementByName("radiobutton", "Selen");      //radiobutton
+        selectAndClickElementByName("radiobutton", "Selen");
         assertTrue(logoTextIsValid("metal: value changed to Selen"));
         dropdownSelect("Yellow");
         assertTrue(logoTextIsValid("Colors: value changed to Yellow"));
-        selectAndClickElementByName("checkbox", "Water");   //checkbox
-        selectAndClickElementByName("checkbox", "Wind");    //checkbox
+        selectAndClickElementByName("checkbox", "Water");
+        selectAndClickElementByName("checkbox", "Wind");
         assertTrue(logoTextIsValid("Water: condition changed to false"));
         assertTrue(logoTextIsValid("Wind: condition changed to false"));
     }

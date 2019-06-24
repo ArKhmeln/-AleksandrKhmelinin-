@@ -4,7 +4,6 @@ import hw2.hw2Base.Hw2BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.testng.Assert.assertTrue;

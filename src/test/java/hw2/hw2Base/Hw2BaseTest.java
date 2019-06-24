@@ -20,8 +20,8 @@ public class Hw2BaseTest {
 
     protected WebDriver driver;
 
-    // TODO protected static final :) Please look to the Java code convention
-    final static protected List<String> expectedIconText = Arrays.asList("To include good practices\n" +
+    // TODO protected static final :) Please look to the Java code convention   -fixed
+    protected static final List<String> expectedIconText = Arrays.asList("To include good practices\n" +
             "and ideas from successful\n" +
             "EPAM project", "To be flexible and\n" +
             "customizable", "To be multiplatform", "Already have good base\n" +
@@ -29,8 +29,8 @@ public class Hw2BaseTest {
             "some external projects),\n" +
             "wish to get more…");
 
-    // TODO protected static final :) Please look to the Java code convention
-    final static protected List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
+    // TODO protected static final :) Please look to the Java code convention   -fixed
+    protected static final List<String> expectedMainHeaderText = Arrays.asList("EPAM FRAMEWORK WISHES…", "LOREM IPSUM DOLOR SIT AMET," +
             " CONSECTETUR ADIPISICING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA. UT" +
             " ENIM AD MINIM VENIAM, QUIS NOSTRUD EXERCITATION ULLAMCO LABORIS NISI UT ALIQUIP EX EA COMMODO" +
             " CONSEQUAT DUIS AUTE IRURE DOLOR IN REPREHENDERIT IN VOLUPTATE VELIT ESSE CILLUM DOLORE EU FUGIAT" +
@@ -87,7 +87,7 @@ public class Hw2BaseTest {
         Assert.assertTrue(driver.findElement(locator).isDisplayed());
     }
 
-    //Click(optional) and get text from elements
+    //Get text from elements
     protected List<String> getTextFromElements(By elementsSelector) {
         List<String> actualElements = new ArrayList<>();
         List<WebElement> webElementsList = driver.findElements(elementsSelector);

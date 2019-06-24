@@ -1,12 +1,12 @@
 package hw3.steps;
 
-import hw3.enums.DifferentElements;
 import hw3.enums.LogTexts;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public abstract class BaseStep {
@@ -16,10 +16,9 @@ public abstract class BaseStep {
         assertTrue(element.isDisplayed());
     }
 
-    //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
-    protected void selectAndClickElementByName(List<WebElement> items, DifferentElements elementName) {
-        for(WebElement element: items) {
-            if (element.getText().equals(elementName.getName())) {
+    protected void findElementByName(List<WebElement> buttons, String elementName) {
+        for(WebElement element: buttons) {
+            if (element.getText().equals(elementName)) {
                 element.click();
                 break;
             }
@@ -36,15 +35,23 @@ public abstract class BaseStep {
         return false;
     }
 
-    //Click(optional) get text from elements
-    protected List<String> getTextFromElements(WebElement elementToClick, List<WebElement> elementsList) {
-        if (elementToClick != null) {
-            elementToClick.click();
-        }
+    protected List<String> getTextFromElements(List<WebElement> elementsList) {
         List<String> actualElements = new ArrayList<>();
-        for (WebElement element : elementsList) {
+        for(WebElement element: elementsList) {
             actualElements.add(element.getText());
         }
         return actualElements;
+    }
+
+    protected void checkTextEquality(List<WebElement> textToCheck, List<String> expectedElements) {
+        List<String> actualElements = getTextFromElements(textToCheck);
+        assertEquals(actualElements, expectedElements);
+    }
+
+    protected void clickAndCheckTextEquality(WebElement clickElement, List<WebElement> textToCheck,
+                                             List<String> expectedElements) {
+        clickElement.click();
+        List<String> actualElements = getTextFromElements(textToCheck);
+        assertEquals(actualElements, expectedElements);
     }
 }

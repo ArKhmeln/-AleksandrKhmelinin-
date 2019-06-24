@@ -40,7 +40,7 @@ public class DifferentElementsPageSteps extends BaseStep {
 
     public void selectAndClickCheckbox(DifferentElements ... checkboxes) {
         for(DifferentElements name: checkboxes) {
-            selectAndClickElementByName(differentElementsPage.getCheckboxes(), name);
+            selectAndClickElementByName("checkbox", name.getName());
         }
     }
 
@@ -51,13 +51,26 @@ public class DifferentElementsPageSteps extends BaseStep {
     }
 
     public void selectAndClickRadiobutton(DifferentElements name) {
-        selectAndClickElementByName(differentElementsPage.getRadiobuttons(), name);
+        selectAndClickElementByName("radiobutton", name.getName());
     }
 
     public void selectAndClickDropdown(DifferentElements name) {
         differentElementsPage.getDropdownMenu().click();
-        selectAndClickElementByName(differentElementsPage.getDropdownMenuElements(), name);
+        selectAndClickElementByName("dropdown", name.getName());
     }
 
-
+    //11, 15, 17 Select/unselect checkboxes, radiobutton, dropdown
+    protected void selectAndClickElementByName(String buttonName, String elementName) {
+        switch (buttonName) {
+            case "checkbox":
+                findElementByName(differentElementsPage.getCheckboxes(), elementName);
+                break;
+            case "radiobutton":
+                findElementByName(differentElementsPage.getRadiobuttons(), elementName);
+                break;
+            case "dropdown":
+                findElementByName(differentElementsPage.getDropdownMenuElements(), elementName);
+                break;
+        }
+    }
 }

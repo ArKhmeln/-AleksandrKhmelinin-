@@ -34,8 +34,7 @@ public class HomePageSteps extends BaseStep {
     }
 
     public void assertHeaderItemsText(List<String> expectedText) {
-        List<String> actualElements = getTextFromElements(null, homePage.getHeaderSectionItems());
-        assertEquals(actualElements, expectedText);
+        checkTextEquality(homePage.getHeaderSectionItems(), expectedText);
     }
 
     public void assertPageImagesPresence() {
@@ -46,12 +45,12 @@ public class HomePageSteps extends BaseStep {
     }
 
     public void assertPageIconsText(List<String> expectedText) {
-        List<String> actualElements = getTextFromElements(null, homePage.getPageIconText());
+        List<String> actualElements = getTextFromElements(homePage.getPageIconText());
         assertEquals(actualElements, expectedText);
     }
 
     public void assertMainHeaderText(List<String> expectedText) {
-        List<String> actualElements = getTextFromElements(null, homePage.getMainHeaderText());
+        List<String> actualElements = getTextFromElements(homePage.getMainHeaderText());
         assertEquals(actualElements, expectedText);
     }
 
@@ -88,13 +87,13 @@ public class HomePageSteps extends BaseStep {
 
     //Steps for Exercise2 start here
     public void assertHeaderDropdownTextInService(List<String> expectedHeaderDropdown) {
-        List<String> actualElements = getTextFromElements(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService());
-        assertEquals(actualElements, expectedHeaderDropdown);
+        clickAndCheckTextEquality(homePage.getHeaderDropdownInService(), homePage.getHeaderDropdownTextInService(),
+                expectedHeaderDropdown);
     }
 
     public void assertLeftSectionDropdownTextInService(List<String> expectedLeftDropdown) {
-        List<String> actualElements = getTextFromElements(homePage.getLeftSectionServiceDropdown(), homePage.getLeftSectionServiceDropdownText());
-        assertEquals(actualElements, expectedLeftDropdown);
+        clickAndCheckTextEquality(homePage.getLeftSectionServiceDropdown(),
+                homePage.getLeftSectionServiceDropdownText(), expectedLeftDropdown);
     }
 
     public void goToServiceDifferentElementsInHeader() {
