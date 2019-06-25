@@ -1,6 +1,7 @@
 package hw3.steps;
 
 import hw3.enums.LogTexts;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -9,7 +10,11 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public abstract class BaseStep {
+public class BaseStep {
+
+    protected WebDriver driver;
+
+    protected BaseStep() {}
 
     //Assert section presence
     protected void assertSectionPresence(WebElement element) {

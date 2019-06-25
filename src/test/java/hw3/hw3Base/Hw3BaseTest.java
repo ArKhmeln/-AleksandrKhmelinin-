@@ -19,8 +19,6 @@ public class Hw3BaseTest {
 
     protected WebDriver driver;
 
-    private FileInputStream fis;
-
     private Properties property = new Properties();
 
     protected String login;
@@ -46,11 +44,11 @@ public class Hw3BaseTest {
         driver.close();
     }
 
+
     //data from property file
     protected void userData() {
-        try {
-            // TODO Is fis closed anywhere?
-            fis = new FileInputStream("src/main/resources/config.properties");
+        try (FileInputStream fis = new FileInputStream("src/main/resources/config.properties")) {
+            // TODO Is fis closed anywhere?     -fixed
             property.load(fis);
         } catch (IOException e) {
             System.err.println("ERROR: Property file not found!");

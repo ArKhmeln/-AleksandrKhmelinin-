@@ -10,13 +10,12 @@ import static org.testng.Assert.assertTrue;
 
 public class DifferentElementsPageSteps extends BaseStep {
 
-    // TODO Why do you not extract this field to the base class?
-    private WebDriver driver;
+    // TODO Why do you not extract this field to the base class?    -fixed
 
     private DifferentElementsPage differentElementsPage;
 
     public DifferentElementsPageSteps(WebDriver driver) {
-        this.driver = driver;
+        super.driver = driver;
         differentElementsPage = new DifferentElementsPage(driver);
     }
 

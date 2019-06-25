@@ -66,7 +66,7 @@ public abstract class BasePage {
         userIcon.click();
     }
 
-    public void fillInLoginNameTextField(String userName) {
+    public void fillTextFieldName(String userName) {
         loginNameTextField.sendKeys(userName);
     }
 
