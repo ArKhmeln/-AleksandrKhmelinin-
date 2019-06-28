@@ -65,6 +65,16 @@
                 <suite.xml>src/test/resources/forhw3/hw3tests.xml</suite.xml>
             </properties>
         </profile>
+
+        <profile>
+            <id>hw4-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/forhw4/hw4tests.xml</suite.xml>
+            </properties>
+        </profile>
     </profiles>
 
     <dependencies>
@@ -112,6 +122,13 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>5.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

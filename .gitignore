@@ -1,5 +1,4 @@
 **/.idea
 *.iml
 **/target
-/src/test/java/hw4/
-/src/main/java/hw4/
+**/build

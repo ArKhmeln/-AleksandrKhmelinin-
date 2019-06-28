@@ -50,11 +50,11 @@ public class Hw3BaseTest {
         try (FileInputStream fis = new FileInputStream("src/main/resources/config.properties")) {
             // TODO Is fis closed anywhere?     -fixed
             property.load(fis);
+            login = property.getProperty("login");
+            password = property.getProperty("password");
         } catch (IOException e) {
             System.err.println("ERROR: Property file not found!");
         }
-        login = property.getProperty("login");
-        password = property.getProperty("password");
     }
 
     //Open test site

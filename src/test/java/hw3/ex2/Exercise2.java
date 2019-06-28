@@ -36,7 +36,7 @@ public class Exercise2 extends Hw3BaseTest {
         homePageSteps.assertHeaderDropdownTextInService(headerServiceDropdownText());
         //6. Click on Service subcategory in the left section and check that drop down contains options
         homePageSteps.assertLeftSectionDropdownTextInService(leftSectionServiceDropdownText());
-        //7. Open through the header menu Service -> Different Elements Page
+        //7. Open through the header menu Service -> Different Metals Page
         homePageSteps.goToServiceDifferentElementsInHeader();
         //8. Check interface on Different elements page, it contains all needed elements
         differentElementsPageSteps.assertPageElementsPresence();
