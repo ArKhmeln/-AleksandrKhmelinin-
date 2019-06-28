@@ -2,7 +2,6 @@ package hw4.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import hw4.enums.general.WebsiteAndUserInfo;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
@@ -15,10 +14,10 @@ public abstract class BasePage {
         return $("title");
     }
 
-    public void login(WebsiteAndUserInfo userName, WebsiteAndUserInfo password) {
+    public void login(String userName, String password) {
         $(By.id("user-icon")).click();
-        $(By.id("name")).sendKeys(userName.getText());
-        $(By.id("password")).sendKeys(password.getText());
+        $(By.id("name")).sendKeys(userName);
+        $(By.id("password")).sendKeys(password);
         $(By.xpath("//button[@id='login-button']")).click();
     }
 

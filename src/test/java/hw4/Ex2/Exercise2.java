@@ -7,8 +7,8 @@ import hw4.pages.MetalsAndColors;
 import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.close;
 import static hw4.enums.metalsAndColors.Result.*;
+import static hw4.enums.metalsAndColors.Vegetables.VEGETABLES_CHECKBOX;
 
 public class Exercise2 extends Ex2DataProvider {
 
@@ -53,12 +53,11 @@ public class Exercise2 extends Ex2DataProvider {
         }
             //Check Vegetable
         if (build.getVegetables() != null) {
-            if(!build.getVegetables().equals(VEGETABLES.getText())) {
+            if(!build.getVegetables().contains(VEGETABLES_CHECKBOX) || build.getVegetables().size() != 1) {
                 for (Vegetables vegetable: build.getVegetables()) {
                     metalsAndColors.getResult(VEGETABLES).shouldHave(text(vegetable.getText()));
                 }
             }
         }
-        close();
     }
 }

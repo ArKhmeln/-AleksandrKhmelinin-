@@ -17,7 +17,7 @@ import static hw4.enums.general.WebsiteAndUserInfo.USER_NAME;
 public class Exercise1 extends BaseTest {
 
     @Test
-    public void ex1Text() {
+    public void tableWithPagesTest() {
         TableWithPages tableWithPages = new TableWithPages();
         //4. Assert User name in the left-top side of screen that user is loggined
         homePage.userName().shouldHave(text(USER_NAME.getText()));
@@ -45,6 +45,5 @@ public class Exercise1 extends BaseTest {
         for(SelenideElement element : tableWithPages.dataTable()) {
             element.shouldHave(text(SEARCH_TEXT.getText()));
         }
-        close();
     }
 }
