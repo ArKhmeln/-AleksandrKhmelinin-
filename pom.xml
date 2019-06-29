@@ -31,7 +31,7 @@
         <profile>
             <id>hw1-add-and-subtract-tests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/forhw1/hw1AddAndSubtractTests.xml</suite.xml>
@@ -77,6 +77,17 @@
                 <suite.xml>src/test/resources/forhw4/hw4tests.xml</suite.xml>
             </properties>
         </profile>
+
+        <profile>
+            <id>hw5-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/forhw5/hw5tests.xml</suite.xml>
+            </properties>
+        </profile>
+
     </profiles>
 
     <dependencies>

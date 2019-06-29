@@ -49,7 +49,7 @@ public class Ex2DataProvider extends BaseTest {
                         .colors(BLUE.getText())
                         .vegetables(Arrays.asList(CUCUMBER, TOMATO, VEGETABLES_CHECKBOX))
                         .build()
-                },
+                }
         };
     }
 }
