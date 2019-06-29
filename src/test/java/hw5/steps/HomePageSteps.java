@@ -1,6 +1,7 @@
 package hw5.steps;
 
 import hw3.enums.WebsiteInfo;
+import hw5.ex1.TestProvider;
 import hw5.pages.HomePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -17,10 +18,11 @@ public class HomePageSteps extends BaseStep {
 
     public HomePageSteps(WebDriver driver) {
         super.driver = driver;
+        TestProvider.getInstance().setDriver(driver);
         homePage = new HomePage(driver);
     }
 
-    @Step("Login as user")
+    @Step("Login as user: '{0}'")
     public void login(String userName, String password) {
         homePage.clickUserIcon();
         homePage.fillTextFieldName(userName);

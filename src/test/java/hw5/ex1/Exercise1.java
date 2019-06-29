@@ -3,6 +3,7 @@ package hw5.ex1;
 import hw5.steps.HomePageSteps;
 import hw5.hw5Base.Hw5BaseTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static hw3.enums.HeaderMenu.headerMenuItems;
@@ -10,6 +11,7 @@ import static hw3.enums.MainHeader.mainHeaderText;
 import static hw3.enums.PageIcons.pageIconsText;
 import static hw3.enums.WebsiteInfo.*;
 
+@Listeners(AllureAttachmentListener.class)
 public class Exercise1 extends Hw5BaseTest {
 
     HomePageSteps homePageSteps;
