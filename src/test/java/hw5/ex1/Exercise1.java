@@ -2,6 +2,8 @@ package hw5.ex1;
 
 import hw5.steps.HomePageSteps;
 import hw5.hw5Base.Hw5BaseTest;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -23,6 +25,8 @@ public class Exercise1 extends Hw5BaseTest {
         homePageSteps = new HomePageSteps(driver);
     }
 
+    @Feature(value = "epam's WebSite testing")
+    @Story(value = "Home Page testing")
     @Test
     public void ex1EpamWebsiteTests() {
         //3. Perform login
