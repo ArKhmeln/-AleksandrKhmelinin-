@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="EPAM web site testing">
+<suite name="EPAM web site testing hw3">
 
     <test name="hw3 test suite">
         <classes>
