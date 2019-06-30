@@ -1,1 +1,0 @@
-{"uuid":"6eb67924-4319-4558-97bb-045023075a29","name":"EPAM web site testing","children":["e9a71f0d-a131-4467-a9e5-bb2058ca543c"],"befores":[{"name":"config","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1561814994042,"stop":1561814994061}],"afters":[],"links":[],"start":1561814994017,"stop":1561815039715}

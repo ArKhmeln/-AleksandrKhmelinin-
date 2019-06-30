@@ -1,1 +1,0 @@
-{"uuid":"8de77ced-7079-4edf-9366-aea43e45c6da","name":"hw1.Base.before","children":["246108e1-0942-4171-84f4-d777d68482fd"],"description":"","befores":[{"name":"before","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1561897468592,"stop":1561897468596}],"afters":[],"links":[],"start":1561897468591,"stop":1561897468596}

@@ -1,1 +1,0 @@
-{"uuid":"06c2dc10-4459-42a5-b066-9e7ebe3b9d2c","name":"EPAM web site testing hw3","children":["5ab856d5-dfe0-4831-9a2a-10e2a4527308"],"befores":[{"name":"setUpDriverPath","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1561892414749,"stop":1561892415275}],"afters":[],"links":[],"start":1561892414716,"stop":1561892428575}
