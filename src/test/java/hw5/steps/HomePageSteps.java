@@ -1,6 +1,6 @@
 package hw5.steps;
 
-import hw3.enums.WebsiteInfo;
+import hw5.enums.WebsiteInfo;
 import hw5.ex1.TestProvider;
 import hw5.pages.HomePage;
 import io.qameta.allure.Step;

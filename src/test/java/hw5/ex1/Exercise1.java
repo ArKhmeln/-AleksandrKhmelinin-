@@ -8,10 +8,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import static hw3.enums.HeaderMenu.headerMenuItems;
-import static hw3.enums.MainHeader.mainHeaderText;
-import static hw3.enums.PageIcons.pageIconsText;
-import static hw3.enums.WebsiteInfo.*;
+import static hw5.enums.HeaderMenu.headerMenuItems;
+import static hw5.enums.MainHeader.mainHeaderText;
+import static hw5.enums.PageIcons.pageIconsText;
+import static hw5.enums.WebsiteInfo.*;
 
 @Listeners(AllureAttachmentListener.class)
 public class Exercise1 extends Hw5BaseTest {

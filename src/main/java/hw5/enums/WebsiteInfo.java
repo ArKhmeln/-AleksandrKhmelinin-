@@ -1,4 +1,4 @@
-package hw3.enums;
+package hw5.enums;
 
 public enum WebsiteInfo {
 
@@ -6,7 +6,7 @@ public enum WebsiteInfo {
     JDI_GITHUB("JDI GITHUB"),
     LINK_JDI("https://github.com/epam/JDI"),
     TITLE("Home Page"),
-    USER_NAME("PITER CHAILOVSKII");
+    USER_NAME("PITER CHAILOVSKII1");
     final String name;
 
     WebsiteInfo(String name) {

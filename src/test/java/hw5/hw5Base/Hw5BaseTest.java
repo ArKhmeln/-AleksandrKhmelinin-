@@ -1,6 +1,6 @@
 package hw5.hw5Base;
 
-import hw3.enums.WebsiteInfo;
+import hw5.enums.WebsiteInfo;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
@@ -13,8 +13,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import static hw3.enums.WebsiteInfo.LINK_MAIN;
-import static hw3.enums.WebsiteInfo.TITLE;
+import static hw5.enums.WebsiteInfo.LINK_MAIN;
+import static hw5.enums.WebsiteInfo.TITLE;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class Hw5BaseTest {
