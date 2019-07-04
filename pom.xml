@@ -15,6 +15,7 @@
         <hw1.path>${basedir}/src/test/resources/files/calculator-1.0.jar</hw1.path>
         <allure.version>2.12.1</allure.version>
         <aspectj.version>1.8.10</aspectj.version>
+        <cucumber.version>1.2.5</cucumber.version>
     </properties>
 
     <profiles>
@@ -31,7 +32,7 @@
         <profile>
             <id>hw1-add-and-subtract-tests</id>
             <activation>
-                <activeByDefault>false</activeByDefault>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/forhw1/hw1AddAndSubtractTests.xml</suite.xml>
@@ -81,10 +82,20 @@
         <profile>
             <id>hw5-tests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/forhw5/hw5tests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw6-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw6/hw6tests.xml</suite.xml>
             </properties>
         </profile>
 
@@ -161,6 +172,21 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.9.9</version>
         </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
