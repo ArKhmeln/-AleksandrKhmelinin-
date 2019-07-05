@@ -38,7 +38,7 @@ public class UserTablePage extends BasePage {
 
     @Getter
     @FindBy(css = "#user-table span")
-    private List<WebElement> descriptionTextsUnderImages;
+    private List<WebElement> descriptionUnderImages;
 
     @Getter
     @FindBy(xpath = "//table[@id='user-table']//td[contains(text(), .)]")

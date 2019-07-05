@@ -1,7 +1,7 @@
 package hw6.steps;
 
-import cucumber.api.DataTable;
 import cucumber.api.java.en.Then;
+import hw6.entities.User;
 import hw6.enums.LogTexts;
 import hw6.enums.UserTables;
 import hw6.enums.WebsiteAndUserInfo;
@@ -10,7 +10,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
-import java.util.Map;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -29,7 +28,7 @@ public class AssertionSteps extends BaseStep {
                 checkIfElementsAreDisplayed(userTablePage.getDescriptionImagesOnUsersTable(), expectedAmount);
                 break;
             case ("descriptionText"):
-                checkIfElementsAreDisplayed(userTablePage.getDescriptionTextsUnderImages(), expectedAmount);
+                checkIfElementsAreDisplayed(userTablePage.getDescriptionUnderImages(), expectedAmount);
                 break;
         }
     }
@@ -151,6 +150,17 @@ public class AssertionSteps extends BaseStep {
     }
 
     @Then("User table contains following values:")
+    public void userTableContainValues(List<User> values) {
+        for(int i = 0; i < values.size(); i++) {
+            assertEquals(userTablePage.getNumbersOnUsersTable().get(i).getText(), values.get(i).getNumber());
+            assertEquals(userTablePage.getUserNamesOnUsersTable().get(i).getText(), values.get(i).getUser());
+            assertEquals(userTablePage.getDescriptionUnderImages().get(i).getText().replace("\n", " "),
+                    values.get(i).getDescription());
+        }
+    }
+
+    //List<Map<>> variant
+    /*@Then("User table contains following values:")
     public void userTableContainValues(DataTable dt) {
         List<Map<String, String>> list = dt.asMaps(String.class, String.class);
         for(int i = 0; i < list.size(); i++) {
@@ -158,11 +168,11 @@ public class AssertionSteps extends BaseStep {
             assertEquals(actualNumber, list.get(i).get("Number"));
             String actualUser = userTablePage.getUserNamesOnUsersTable().get(i).getText();
             assertEquals(actualUser, list.get(i).get("User"));
-            String actualDescription = userTablePage.getDescriptionTextsUnderImages()
+            String actualDescription = userTablePage.getDescriptionUnderImages()
                     .get(i).getText().replace("\n", " ");
             assertEquals(actualDescription, list.get(i).get("Description"));
         }
-    }
+    }*/
 
     @Then("'(.+)' log row has '(.+)' text in log section")
     public void logRowHasText(int amount, LogTexts text) {
