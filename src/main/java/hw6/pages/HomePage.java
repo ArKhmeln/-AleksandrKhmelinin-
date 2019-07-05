@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
     }
 
     public static HomePage getInstance(WebDriver driver) {
-        if (instance == null) {
+        if (instance == null || instance.driver != driver) {
             instance = new HomePage(driver);
         }
         return instance;

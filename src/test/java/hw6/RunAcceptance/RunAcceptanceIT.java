@@ -1,4 +1,4 @@
-package hw6;
+package hw6.RunAcceptance;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;

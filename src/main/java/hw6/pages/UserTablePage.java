@@ -18,7 +18,7 @@ public class UserTablePage extends BasePage {
     }
 
     public static UserTablePage getInstance(WebDriver driver) {
-        if (instance == null) {
+        if (instance == null || instance.driver != driver) {
             instance = new UserTablePage(driver);
         }
         return instance;

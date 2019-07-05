@@ -25,11 +25,4 @@ public class CucumberHooks {
     public void closeDriver() {
         TestContext.getDriver().close();
     }
-    /*public static void closeBrowser() throws Exception{
-        if (TestContext.getDriver() == null) {
-            return;
-        }
-        TestContext.getDriver().quit();
-        TestContext.getDriver() = null;
-    }*/
 }

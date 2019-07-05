@@ -16,7 +16,7 @@ public class DifferentElementsPage extends BasePage {
     }
 
     public static DifferentElementsPage getInstance(WebDriver driver) {
-        if (instance == null) {
+        if (instance == null || instance.driver != driver) {
             instance = new DifferentElementsPage(driver);
         }
         return instance;
