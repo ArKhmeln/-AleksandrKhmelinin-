@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public class User {
+public class UserTable {
 
     private String number;
 

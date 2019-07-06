@@ -1,7 +1,7 @@
 package hw6.steps;
 
 import cucumber.api.java.en.Then;
-import hw6.entities.User;
+import hw6.entities.UserTable;
 import hw6.enums.LogTexts;
 import hw6.enums.UserTables;
 import hw6.enums.WebsiteAndUserInfo;
@@ -150,7 +150,7 @@ public class AssertionSteps extends BaseStep {
     }
 
     @Then("User table contains following values:")
-    public void userTableContainValues(List<User> values) {
+    public void userTableContainValues(List<UserTable> values) {
         for(int i = 0; i < values.size(); i++) {
             assertEquals(userTablePage.getNumbersOnUsersTable().get(i).getText(), values.get(i).getNumber());
             assertEquals(userTablePage.getUserNamesOnUsersTable().get(i).getText(), values.get(i).getUser());
